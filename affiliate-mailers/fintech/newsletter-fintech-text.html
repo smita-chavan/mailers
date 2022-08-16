@@ -1,0 +1,903 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>%%subject%%</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style type="text/css">
+        /* CLIENT-SPECIFIC STYLES */
+        
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+        table table table {
+            table-layout: auto;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+        a {
+            text-decoration: none;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        *[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links *,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+            display: none !important;
+            opacity: 0.01 !important;
+        }
+        /* If the above doesn't work, add a .g-img class to any image in question. */
+        img.g-img + div {
+            display: none !important;
+        }
+
+    .ExternalClass,
+    .ExternalClass a,
+    .ExternalClass span,
+    .ExternalClass b,
+    .ExternalClass br,
+    .ExternalClass p,
+    .ExternalClass div {
+      line-height: inherit;
+    }
+    /* iOS BLUE LINKS */
+    
+    a[x-apple-data-detectors] {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+    }
+        .sign a {
+            color: #ffffff;
+        }
+  
+    /* MOBILE STYLES */
+    
+    @media screen and (max-width: 525px) 
+    {
+      .flex, *[class=flex] {
+    width: 100% !important;
+    display: block !important;
+    text-align: center !important;
+}
+.padd-top-10{
+  padding-top: 10px !important;
+}
+      .space{
+        padding: 0 5px !important; 
+      }
+
+        /* ADJUSTS LAYOUT OF LOGO IMAGE */
+      
+      .logo img 
+      {
+        margin: 0 auto !important;
+      }
+
+      /* ALLOWS FOR FLUID TABLES */
+      
+      .wrapper 
+      {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      
+      .responsive-table 
+      {
+        width: 100% !important;
+      }
+
+      /* ADJUSTS LAYOUT OF FONT SIZE */
+
+      .mobile-font,
+      *[class=mobile-font] 
+      {
+        font-size: 16px !important;
+    line-height: 24px !important;
+      }
+      .mobile-font-head,
+      *[class=mobile-font-head] 
+      {
+        font-size: 22px !important;
+        line-height: 30px !important;
+      }
+      .mobile-font-subtitle
+      {
+        font-size: 17px !important;
+        line-height: 27px !important;
+      }
+
+      /* ALLOWS FOR FLUID TABLES DATA */
+
+      .flex, *[class=flex] 
+      {
+            width: 100% !important;
+            display: block !important;
+            margin-bottom: 20px !important;
+          }
+      .flex1,
+      *[class=flex1] 
+      {
+        width: 100% !important;
+        display: block !important;
+        margin-bottom: 2px !important;
+        text-align: center !important;
+      }
+      .flex2,
+      *[class=flex2] {
+        width: 100% !important;
+        display: block !important;
+      }
+      .flex3, *[class=flex3] 
+      {
+        display: none !important;
+      }
+      .icon-width,
+      *[class=icon-width] {
+        width: 20% !important;
+      }
+      .img-full-width, *[class=img-full-width]
+      {
+        width: 100%;
+      }
+
+      .border-tb {
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+      /* ADJUST BORDER ON MOBILE */
+
+      .border_none
+      {
+        border: 0 !important;
+      }
+      
+      /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */      
+
+      .no-mb
+      {
+        margin-bottom: 0px !important;
+      }
+
+      .msonopad 
+      {
+        padding: 0 4px !important;
+      }
+      .no-padding 
+      {
+        padding: 0 !important;
+      }
+      .padd-top-0{
+        padding-top: 0px!important;
+      }
+      .padd-btm-0{
+        padding-bottom: 0px!important;
+      }
+      .mpadd{
+            padding-left: 40px !important;
+            }
+    }
+    /* ANDROID CENTER FIX */
+    
+    div[style*="margin: 16px 0;"] {
+      margin: 0 !important;
+    }
+    </style>
+
+    <!--[if gte mso 9]>
+    <style type="text/css" media="all">
+     .msonopad {
+        padding-right: 10px;
+        text-align:center;
+        width:40px;
+      }
+      img.mso-img {
+        padding-top: 10px;
+      }
+      .bottom-border{
+        margin-bottom: 0 ! important;
+      }
+      img.headerlogo { width: 165px; height:42px;}
+    </style>
+  <![endif]-->
+
+</head>
+
+<body style="margin: 0 !important; padding: 0 !important;">
+<!--[if (gte mso 9)|(ie)]>
+<center>
+<table align="center" border="0" cellspacing="0" cellpadding="0"  width="600">
+<tr>
+<td align="center" valign="top" width="600">
+<![endif]--><!-- HIDDEN PREHEADER TEXT -->
+<div style="mso-hide:all; display:none; font-size:1px; color:#333333; line-height:0;font-family: Arial,Helvetica,  sans-serif; max-height:0; max-width:0; opacity:0; overflow:hidden;">Newsletter fintech</div>
+
+<table align="center">
+	<tbody>
+		<tr>
+			<td align="center" class="container" style="border:1px solid #dddddd;" width="600">
+			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tbody>
+					<tr>
+						<td align="left" style="padding: 20px 30px;">
+						<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+							<tbody>
+                <tr>
+            <td align="left" style="padding: 10px 0px; border-top: 2px solid #000000;border-bottom: 2px solid #00BE6D;">
+            <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+              <tbody>
+								<tr>
+									<td align="left" class="flex" valign="middle" width="50%"><img alt="Emeritus Logo" border="0" class="headerlogo" height="42" src="https://emeritus.org/wp-content/uploads/2021/01/emeritus-new-logo.png" style="max-width: 165;display: inline-block; border: 0px;" title="Emeritus Logo" width="165"> </a></td>
+									<td align="right" class="flex1" style="font-size:14px; line-height: 20px; font-family:Arial,Helvetica, sans-serif; color:#000000;" valign="center" width="50%"><b>Online Learning Review: Finance & Fintech</b></td>
+								</tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+					
+					<tr>
+						<td align="left" bgcolor="#ffffff" style="padding: 0px 30px 30px 30px;">
+						<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+							<tbody>
+                <tr>
+                  <td align="center" class="mobile-font-head" style="font-size:20px; font-family:Arial,Helvetica, sans-serif; color:#000000;line-height:26px;"><b>The Fintech Landscape</b></td>
+                </tr>
+								<tr>
+									<td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;padding-top: 20px;">From cryptocurrencies, blockchain, and artificial intelligence to <b>wealthtech and cybersecurity, financial technology (or fintech)</b> has continued its meteoric rise, dominating the financial industry in 2021. In fact, the global fintech market is expected to achieve a value of approximately $324 billion by 2026, <b>growing at a CAGR of about 23.41%</b> between 2021 and 2026.<br>
+                    <br>
+                  The term fintech refers to the computer programs and technologies that are used to support or enable <b>banking and finance</b> used by businesses that provide automated and improved financial services. And as it’s grown, fintech has altered consumer expectations and behavior, laying the groundwork for disruption across the financial industry and beyond it.</td>
+
+								</tr>
+              
+								<tr>
+									<td align="center" bgcolor="#ffffff" style="padding-top: 30px;">
+									<table border="0" cellpadding="0" cellspacing="0">
+										<tbody>
+											<tr>
+												<td class="button-td button-td-primary" style="border-radius: 6px; background:#000000;"><a class="button-a button-a-primary" href="https://emeritus.org/the-fintech-landscape?utm_source=SOEmailer&utm_medium=Emailer&utm_campaign=Blogpost_TheFintechLandscape_Newsletter_Sep2021&utm_content=ReadMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Read More</a></td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" bgcolor="#eeeeee" style="padding:30px 30px;">
+						<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+							<tbody>
+								<tr>
+									<td align="center" class="mobile-font-head" style="font-size:20px; font-family:Arial,Helvetica, sans-serif; color:#000000;line-height:28px;padding-bottom: 10px;"><strong>Testimonials</strong></td>
+								</tr>
+								<tr>
+									<td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;">“Thank you <b>Prof. Yaniv Konchitchki</b> for putting together such a comprehensive and interesting course! I got to hear from innovators, VC partners, and other amazing professors on everything from factors driving the fintech revolution and trends, how to <b>evaluate fintech companies</b>, and even learned how to bring a fintech idea from inception to implementation – in which I am happy to say, I came up with an idea that may (key word) come to life! If you are looking to either enter or re-enter the fintech world or are looking to figure out <b>how to bring your idea to life</b>, take this course.”
+                                    <br>
+                                    <br><b>— Laura Dirtadian</b>, Vice President, Enterprise Risk at Affirm, Inc.
+                                    <span style="font-size:14px;"><br><em>Berkeley Fintech: Frameworks, Applications, and Strategies</em></span></td>
+								</tr>
+             
+
+              </tbody>
+            </table>
+          </td>
+          </tr>
+          <tr>
+                  <td align="center" bgcolor="#ffffff" class="no-padding-section" style="padding: 30px 30px;">
+                  <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                     <tbody>
+                        <tr>
+                           <td align="center" bgcolor="#ffffff" style="padding: 0px 0px 0px 0px;">
+                           <table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                              <tbody>
+                                 <tr>
+                                    <td align="center" class="mobile-font-head" style="font-size:20px; font-family:Arial,Helvetica, sans-serif; color:#000000;line-height:30px;padding-bottom: 20px;"><strong>#TheEmeritusImpact</strong></td>
+                                 </tr>
+                                 <tr>
+                                 <td align="left" bgcolor="#ffffff">
+                                 <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                    <tbody>
+                                       <tr>
+                                          <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#000000;line-height:20px;padding-bottom: 20px;">Here is a snippet of our 6-year journey empowering careers, building leaders, and changing lives.</td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                                 </td>
+                              </tr>
+                                <tr>
+                                    <td align="center" bgcolor="#ffffff" class="padd-top-30 padd-btm-0" style="padding-top: 0px;padding-bottom: 10px;">
+                                    <table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                       <tbody>
+                                          <tr>
+                                             <td align="left" class="flex" style="" valign="top" width="49%">
+                                             <table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                <tbody>
+                                                   <tr>
+                                                      <td align="center" style="padding: 0px;">
+                                                      <table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td align="left" class="padd-top-10" style="padding-top: 10px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#0080cc;line-height: 24px;padding-bottom: 10px;" valign="top" width="20%"><img alt="icon" border="0" class="center-on-narrow" src="https://emeritus.org/wp-content/uploads/2021/10/IC-1.png" style="max-width: 100%;"></td>
+                                                                        <td align="left" class="mobile-font pl" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;padding-bottom: 15px;padding-left: 10px;">50+ School Partners</td>
+                                                                    </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#0080cc;line-height: 24px;padding-bottom: 25px;" valign="top" width="20%"><img alt="icon" border="0" class="center-on-narrow" src="https://emeritus.org/wp-content/uploads/2021/10/IC-3.png" style="max-width: 100%;"></td>
+                                                                        <td align="left" class="mobile-font pl" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;padding-bottom: 15px;padding-left: 10px;">  past learners observed a positive impact on their business or organization</td>
+                                                                    </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#0080cc;line-height: 24px;padding-bottom: 25px;" valign="top" width="20%"><img alt="icon" border="0" class="center-on-narrow" src="https://emeritus.org/wp-content/uploads/2021/10/IC-5.png" style="max-width: 100%;"></td>
+                                                                        <td align="left" class="mobile-font pl" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;padding-bottom: 15px;padding-left: 10px;">80% learners agree that the tools and strategies could be immediately applied to their work</td>
+                                                                    </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#0080cc;line-height: 24px;padding-bottom: 25px;" valign="top" width="20%"><img alt="icon" border="0" class="center-on-narrow" src="https://emeritus.org/wp-content/uploads/2021/10/IC-7.png" style="max-width: 100%;"></td>
+                                                                        <td align="left" class="mobile-font pl padd-btm-0" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;padding-bottom: 15px;padding-left: 10px;">97% learners believe the program was important to get new opportunities at work</td>
+                                                                    </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                               </td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                      </td>
+                                                   </tr>
+                                                </tbody>
+                                             </table>
+                                             </td>
+                                             <td align="left" class="flex3" style="" valign="top" width="2%">&nbsp;</td>
+                                             <td align="left" class="flex no-mb" style="" valign="top" width="49%">
+                                             <table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                <tbody>
+                                                   
+                                                   <tr>
+                                                      <td align="center" style="padding: 0px;">
+                                                      <table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td align="left" class="padd-top-0" style="padding-top: 10px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                      <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#0080cc;line-height: 24px;padding-bottom: 10px;" valign="top" width="20%"><img alt="icon" border="0" class="center-on-narrow" src="https://emeritus.org/wp-content/uploads/2021/10/IC-2.png" style="max-width: 100%;"></td>
+                                                                        <td align="left" class="mobile-font pl" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;padding-bottom: 15px;padding-left: 10px;">2,00,000+ Learners</td>
+                                                                    </tr>
+                                                                      <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#0080cc;line-height: 24px;padding-bottom: 25px;" valign="top" width="20%"><img alt="icon" border="0" class="center-on-narrow" src="https://emeritus.org/wp-content/uploads/2021/10/IC-4.png" style="max-width: 100%;"></td>
+                                                                        <td align="left" class="mobile-font pl" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;padding-bottom: 15px;padding-left: 10px;">94% of the students experienced a positive impact on their career and professional development</td>
+                                                                    </tr>
+                                                                      <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#0080cc;line-height: 24px;padding-bottom: 25px;" valign="top" width="20%"><img alt="icon" border="0" class="center-on-narrow" src="https://emeritus.org/wp-content/uploads/2021/10/IC-6.png" style="max-width: 100%;"></td>
+                                                                        <td align="left" class="mobile-font pl" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;padding-bottom: 15px;padding-left: 10px;">73% of our students agree that having a certificate from the partner school gave a boost to their resume</td>
+                                                                    </tr>
+                                                                     
+                                                                  </tbody>
+                                                               </table>
+                                                               </td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                      </td>
+                                                   </tr>
+                                                </tbody>
+                                             </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                 <td align="left" bgcolor="#ffffff">
+                                 <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                    <tbody>
+                                       <tr>
+                                          <td align="center" style="font-size:12px; font-family:Arial,Helvetica, sans-serif; color:#000000;line-height:20px;"><em>Source: Emeritus 2021 Impact Survey conducted by the Emeritus Marketing Research and Customer Insights Team in May</em></td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                                 </td>
+                              </tr>
+                                   
+                              </tbody>
+                           </table>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  </td>
+               </tr>
+          
+					<tr>
+						<td align="left" bgcolor="#eeeeee" style="padding:30px 30px;">
+						<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+							<tbody>
+								<tr>
+									<td align="center" class="mobile-font-head" style="font-size:20px; font-family:Arial,Helvetica, sans-serif; color:#000000;line-height:24px;padding-bottom: 10px;"><strong>Career Transformation Insights</strong></td>
+								</tr>
+								<tr>
+									<td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;">Stay ahead of the learning curve with exclusive access to industry news, trend alerts, thought leadership articles, surveys and reports from the desk of Emeritus.</td>
+								</tr>
+                                <tr>
+                                  <td align="center" bgcolor="#eeeeee" style="padding-top:30px;">
+                                  <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                      <tr>
+                                        <td class="button-td button-td-primary" style="border-radius: 6px; background:#000000;"><a class="button-a button-a-primary" href="https://emeritus.org/blog?utm_source=SOEmailer&utm_medium=Emailer&utm_campaign=Blogindexpage_Emeritus Newsletter_Sep 2021&utm_content=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                  </td>
+                                </tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+					<tr>
+                        <td align="left" bgcolor="#ffffff" style="padding: 30px 30px 30px;">
+                           <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                              <tbody>
+                                 <tr>
+                                    <td align="center" class="mobile-font" style="font-size:20px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:26px;padding-bottom: 20px;"><strong>Upcoming Programs</strong>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td align="left" bgcolor="#ffffff" style="padding-bottom:0px;">
+                                       <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                          <tbody>
+                                             <tr>
+                                                <td align="left" valign="top" class="mobile-font flex pb-20" width="49%">
+                                                   <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                      <tbody>
+                                                         <tr>
+                                                            <td>
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;"><strong>Mergers & Acquisitions: Valuate, Structure, Negotiate & Manage</strong>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;">
+                                                                           Imperial College Business School Executive Education
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 8px;">
+                                                                          8 weeks, online
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" bgcolor="#ffffff">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" align="left">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #000000;"><a class="mob-btn" href="https://online1.gsb.columbia.edu/mergers-acquisitions?utm_source=SOEmailer&utm_medium=Emailer&utm_campaign=SO_B-14784_IMP-MEAC_OldBase_EmeritusNewsletter_Sep2021&utm_campaign=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td style="padding-top:20px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;"><strong>Intelligent Investing for Everyone</strong>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;">
+                                                                           UC Berkeley Executive Education
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 8px;">
+                                                                           8 weeks, online
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" bgcolor="#ffffff">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" align="left">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #000000;"><a class="mob-btn" href="https://em-executive.berkeley.edu/intelligent-investing?utm_source=SOEmailer&utm_medium=Emailer&utm_campaign=SO_B-14854_BH-FDA_OldBase_EmeritusNewsletter_Sep2021&utm_campaign=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td style="padding-top:20px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;"><strong>Private Equity: Financing, Investing and Value Creation</strong>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;">
+                                                                           Imperial College Business School Executive Education
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 8px;">
+                                                                           11 weeks, online
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" bgcolor="#ffffff">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" align="left">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #000000;"><a class="mob-btn" href="https://execed-online.imperial.ac.uk/private-equity?utm_source=SOEmailer&utm_medium=Emailer&utm_campaign=SO_B-14469_IMP-PREQ_OldBase_EmeritusNewsletter_Sep2021&utm_campaign=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td style="padding-top:20px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;"><strong>Financial Analytics: Forecasting, Modeling, and Optimization</strong>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;">
+                                                                           Wharton Executive Education
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 8px;">
+                                                                          6 weeks, online
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" bgcolor="#ffffff">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" align="left">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #000000;"><a class="mob-btn" href="https://online-execed.wharton.upenn.edu/financial-analytics?utm_source=SOEmailer&utm_medium=Emailer&utm_campaign=SO_B-15229_WH-FIAN_OldBase_EmeritusNewsletter_Sep2021&utm_campaign=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td style="padding-top: 20px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;"><strong>Value Investing: Making Intelligent Investment Decisions</strong>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;">
+                                                                           Columbia Business School Executive Education
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 8px;">
+                                                                          2 months, online
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" bgcolor="#ffffff">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" align="left">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #000000;"><a class="mob-btn" href="https://online1.gsb.columbia.edu/value-investing?utm_source=SOEmailer&utm_medium=Emailer&utm_campaign=SO_B-14802_CBS-VI_OldBase_EmeritusNewsletter_Sep2021&utm_campaign=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                                <td align="left" valign="top" class="flex" width="2%">
+                                                </td>
+                                                <td align="left" valign="top" class="mobile-font flex" width="49%">
+                                                   <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                      <tbody>
+                                                         <tr>
+                                                            <td style="padding-top:0px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;"><strong>Fintech Innovation: Disrupting the Financial Landscape</strong>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;">
+                                                                          Cambridge Judge Business School Executive Education
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 8px;">
+                                                                          6 weeks, online
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" bgcolor="#ffffff">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" align="left">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #000000;"><a class="mob-btn" href="https://online.em.jbs.cam.ac.uk/fintech-innovation?utm_source=SOEmailer&utm_medium=Emailer&utm_campaign=SO_B-14464_CJ-FITE_OldBase_EmeritusNewsletter_Sep2021&utm_campaign=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td style="padding-top:20px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;"><strong>Investment Strategies</strong>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;">
+                                                                         Columbia Business School Executive Education
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 8px;">
+                                                                           10 weeks, online
+                                                                        </td>
+                                                                     </tr>
+                                                                   <tr>
+                                                                        <td align="left" bgcolor="#ffffff">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" align="left">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #000000;"><a class="mob-btn" href="https://online1.gsb.columbia.edu/investment-strategies-online?utm_source=SOEmailer&utm_medium=Emailer&utm_campaign=SO_B-14808_CBS-INMA_OldBase_EmeritusNewsletter_Sep2021&utm_campaign=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                          <tr>
+                                                            <td style="padding-top:20px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;"><strong>Finance and Accounting for the Nonfinancial Professional</strong>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;">
+                                                                         Columbia Business School Executive Education
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 8px;">
+                                                                           10 weeks, online
+                                                                        </td>
+                                                                     </tr>
+                                                                   <tr>
+                                                                        <td align="left" bgcolor="#ffffff">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" align="left">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #000000;"><a class="mob-btn" href="https://online1.gsb.columbia.edu/finance-accounting-nonfinancial-professional?utm_source=SOEmailer&utm_medium=Emailer&utm_campaign=SO_B-15248_CBS-FANP_OldBase_EmeritusNewsletter_Sep2021&utm_campaign=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td style="padding-top:20px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;"><strong>Berkeley Fintech: Frameworks, Applications, and Strategies</strong>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;">
+                                                                         UC Berkeley Executive Education
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 8px;">
+                                                                            2 months, online
+                                                                        </td>
+                                                                     </tr>
+                                                                   <tr>
+                                                                        <td align="left" bgcolor="#ffffff">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" align="left">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #000000;"><a class="mob-btn" href="https://em-executive.berkeley.edu/fintech?utm_source=SOEmailer&utm_medium=Emailer&utm_campaign=SO_B-14851_BH-FITE_OldBase_EmeritusNewsletter_Sep2021&utm_campaign=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr> 
+                                                          <tr>
+                                                            <td style="padding-top:20px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;"><strong>Construction Finance Management</strong>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;">
+                                                                        Columbia Engineering Executive Education
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 8px;">
+                                                                           3 months, online
+                                                                        </td>
+                                                                     </tr>
+                                                                   <tr>
+                                                                        <td align="left" bgcolor="#ffffff">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" align="left">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #000000;"><a class="mob-btn" href="https://online-exec.cvn.columbia.edu/construction-finance-management?utm_source=SOEmailer&utm_medium=Emailer&utm_campaign=SO_B-14847_CE-CFM_OldBase_EmeritusNewsletter_Sep2021&utm_campaign=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>                                                     
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td align="center" bgcolor="#ffffff" style="padding: 0px 30px;">
+                           <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                              <tbody>
+                                 <tr>
+                                    <td align="center" style="font-size:12px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding: 20px 0px;border-top: 2PX solid #000000;">
+                                       Emeritus Institute of Management | Committee for Private Education Registration Number 201510637C | Period: 29 March 2018 to 28 March 2022
+                                    </td>
+                                 </tr>
+                                 
+                              </tbody>
+                           </table>
+                        </td>
+                     </tr>
+				
+					<tr>
+						<td align="left" bgcolor="#ffffff" style="padding:0px 30px 20px;">
+						<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+							<tbody>
+								<tr>
+									<td align="center" style="font-size: 12px; line-height:22px; font-family:Arial,  Helvetica, sans-serif; color:#333333;" class=""><a href="%%unsubscribe%%" style="color: #333333; text-decoration: underline;" target="_blank">unsubscribe from this list</a></td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</body>
+
+</html>

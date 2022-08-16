@@ -1,0 +1,821 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>%%subject%%</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style type="text/css">
+        /* CLIENT-SPECIFIC STYLES */
+        
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+        table table table {
+            table-layout: auto;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+        a {
+            text-decoration: none;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        *[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links *,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+            display: none !important;
+            opacity: 0.01 !important;
+        }
+        /* If the above doesn't work, add a .g-img class to any image in question. */
+        img.g-img + div {
+            display: none !important;
+        }
+
+    .ExternalClass,
+    .ExternalClass a,
+    .ExternalClass span,
+    .ExternalClass b,
+    .ExternalClass br,
+    .ExternalClass p,
+    .ExternalClass div {
+      line-height: inherit;
+    }
+    /* iOS BLUE LINKS */
+    
+    a[x-apple-data-detectors] {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+    }
+        .sign a {
+            color: #ffffff;
+        }
+  
+    /* MOBILE STYLES */
+    
+    @media screen and (max-width: 525px) 
+    {
+      .flex, *[class=flex] {
+    width: 100% !important;
+    display: block !important;
+    text-align: center !important;
+}
+.padd-top-10{
+  padding-top: 10px !important;
+}
+      .space{
+        padding: 0 5px !important; 
+      }
+
+        /* ADJUSTS LAYOUT OF LOGO IMAGE */
+      
+      .logo img 
+      {
+        margin: 0 auto !important;
+      }
+
+      /* ALLOWS FOR FLUID TABLES */
+      
+      .wrapper 
+      {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      
+      .responsive-table 
+      {
+        width: 100% !important;
+      }
+
+      /* ADJUSTS LAYOUT OF FONT SIZE */
+
+      .mobile-font,
+      *[class=mobile-font] 
+      {
+        font-size: 16px !important;
+    line-height: 24px !important;
+      }
+      .mobile-font-head,
+      *[class=mobile-font-head] 
+      {
+        font-size: 22px !important;
+        line-height: 30px !important;
+      }
+      .mobile-font-subtitle
+      {
+        font-size: 17px !important;
+        line-height: 27px !important;
+      }
+
+      /* ALLOWS FOR FLUID TABLES DATA */
+
+      .flex, *[class=flex] 
+      {
+            width: 100% !important;
+            display: block !important;
+            margin-bottom: 20px !important;
+          }
+      .flex1,
+      *[class=flex1] 
+      {
+        width: 100% !important;
+        display: block !important;
+        margin-bottom: 2px !important;
+        text-align: center !important;
+      }
+      .flex2,
+      *[class=flex2] {
+        width: 100% !important;
+        display: block !important;
+      }
+      .flex3, *[class=flex3] 
+      {
+        display: none !important;
+      }
+      .icon-width,
+      *[class=icon-width] {
+        width: 20% !important;
+      }
+      .img-full-width, *[class=img-full-width]
+      {
+        width: 100%;
+      }
+
+      .border-tb {
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+      /* ADJUST BORDER ON MOBILE */
+
+      .border_none
+      {
+        border: 0 !important;
+      }
+      
+      /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */      
+
+      .no-mb
+      {
+        margin-bottom: 0px !important;
+      }
+
+      .msonopad 
+      {
+        padding: 0 4px !important;
+      }
+      .no-padding 
+      {
+        padding: 0 !important;
+      }
+      .padd-top-0{
+        padding-top: 0px!important;
+      }
+      .padd-btm-0{
+        padding-bottom: 0px!important;
+      }
+      .mpadd{
+            padding-left: 40px !important;
+            }
+    }
+    /* ANDROID CENTER FIX */
+    
+    div[style*="margin: 16px 0;"] {
+      margin: 0 !important;
+    }
+    </style>
+
+    <!--[if gte mso 9]>
+    <style type="text/css" media="all">
+     .msonopad {
+        padding-right: 10px;
+        text-align:center;
+        width:40px;
+      }
+      img.mso-img {
+        padding-top: 10px;
+      }
+      .bottom-border{
+        margin-bottom: 0 ! important;
+      }
+      img.headerlogo { width: 165px; height:42px;}
+    </style>
+  <![endif]-->
+
+</head>
+
+<body style="margin: 0 !important; padding: 0 !important;">
+<!--[if (gte mso 9)|(ie)]>
+<center>
+<table align="center" border="0" cellspacing="0" cellpadding="0"  width="600">
+<tr>
+<td align="center" valign="top" width="600">
+<![endif]--><!-- HIDDEN PREHEADER TEXT -->
+<div style="mso-hide:all; display:none; font-size:1px; color:#333333; line-height:0;font-family: Arial,Helvetica,  sans-serif; max-height:0; max-width:0; opacity:0; overflow:hidden;">Newsletter Coding</div>
+
+<table align="center">
+	<tbody>
+		<tr>
+			<td align="center" class="container" style="border:1px solid #dddddd;" width="600">
+			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tbody>
+					<tr>
+						<td align="left" style="padding: 20px 30px;">
+						<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+							<tbody>
+                <tr>
+            <td align="left" style="padding: 10px 0px; border-top: 2px solid #000000;border-bottom: 2px solid #00BE6D;">
+            <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+              <tbody>
+								<tr>
+									<td align="left" class="flex" valign="middle" width="50%"><img alt="Emeritus Logo" border="0" class="headerlogo" height="42" src="https://emeritus.org/wp-content/uploads/2021/01/emeritus-new-logo.png" style="max-width: 165;display: inline-block; border: 0px;" title="Emeritus Logo" width="165"> </a></td>
+									<td align="right" class="flex1" style="font-size:14px; line-height: 20px; font-family:Arial,Helvetica, sans-serif; color:#000000;" valign="center" width="50%"><b>Online Learning Review: Coding, Cybersecurity, AI & Machine Learning</b></td>
+								</tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+					
+					<tr>
+						<td align="left" bgcolor="#ffffff" style="padding: 0px 30px 30px 30px;">
+						<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+							<tbody>
+                <tr>
+                  <td align="center" class="mobile-font-head" style="font-size:20px; font-family:Arial,Helvetica, sans-serif; color:#000000;line-height:26px;"><b>Women in Coding, Opportunities and the Future</b></td>
+                </tr>
+								<tr>
+									<td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;padding-top: 20px;">Technology is often considered enablement in the back office or something to support a business. However, in this post-COVID-19 period—there is a growing awareness, and technology is making a shift to the foreground. As technology becomes the competitive differentiator for how companies and ecosystems operate, this rapid development creates new opportunities in every direction.<br>
+                    <br>
+                  A growing number of companies are hiring web developers, software engineers, and other technology workers
+who use technical skills to streamline their operations and leverage the power of technology within their
+organizations—going on to highlight that the industry is driven predominantly by talent. As a matter of fact,
+employment for software developers is projected to grow 22% from 2019 to 2029 (according to the U.S. Bureau of
+Labor Statistics). However, the biggest challenge the tech industry faces today is talent acquisition across genders.</td>
+
+								</tr>
+              
+								<tr>
+									<td align="center" bgcolor="#ffffff" style="padding-top: 30px;">
+									<table border="0" cellpadding="0" cellspacing="0">
+										<tbody>
+											<tr>
+												<td class="button-td button-td-primary" style="border-radius: 6px; background:#000000;"><a class="button-a button-a-primary" href="https://emeritus.org/women-in-coding-opportunities-and-the-future?utm_source=SOEmailer&utm_medium=Emailer&utm_campaign=Blogpost_Women_in_Coding_Emeritus Newsletter_Sep 2021&utm_content=ReadMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Read More</a></td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" bgcolor="#eeeeee" style="padding:30px 30px;">
+						<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+							<tbody>
+								<tr>
+									<td align="center" class="mobile-font-head" style="font-size:20px; font-family:Arial,Helvetica, sans-serif; color:#000000;line-height:28px;padding-bottom: 10px;"><strong>Speaking in Code: Why This CEO is Learning the MERN Stack</strong></td>
+								</tr>
+								<tr>
+									<td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;padding-bottom: 20px;">There’s a reason why full stack developer is a top-5 ranked job in LinkedIn’s Emerging Jobs Report (2020).
+                  Employment for software developers is projected to grow 22% from 2019 to 2029, a rate that crushes most
+                  other occupations. Plus, it provides a nice lifestyle, given the national U.S. average salary for developers clocks in at $108K. Therefore, as individuals consider various career paths, coding rises to the top for many.
+                  <br><br>
+                  But for some professionals, coding is not a career path so much as a career enhancer. There are many
+                  compelling reasons to learn how to code. Meet Dennis Sponer, who started a software company, ScripNet, and
+                  ran it for 15 years until it was sold to Optum Healthcare Solutions.</td>
+								</tr>
+                <tr>
+                  <td align="center" bgcolor="#eeeeee" style="padding-top:0px;">
+                  <table border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                      <tr>
+                        <td class="button-td button-td-primary" style="border-radius: 6px; background:#000000;"><a class="button-a button-a-primary" href="https://emeritus.org/speaking-in-code-why-this-ceo-is-learning-the-mern-stack?utm_source=SOEmailer&utm_medium=Emailer&utm_campaign=Blogpost_Speaking_in_Code_Emeritus Newsletter_Sep 2021&utm_content=ReadMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Read More</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </td>
+          </tr>
+          <tr>
+                  <td align="center" bgcolor="#ffffff" class="no-padding-section" style="padding: 30px 30px;">
+                  <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                     <tbody>
+                        <tr>
+                           <td align="center" bgcolor="#ffffff" style="padding: 0px 0px 0px 0px;">
+                           <table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                              <tbody>
+                                 <tr>
+                                    <td align="center" class="mobile-font-head" style="font-size:20px; font-family:Arial,Helvetica, sans-serif; color:#000000;line-height:30px;padding-bottom: 20px;"><strong>#TheEmeritusImpact</strong></td>
+                                 </tr>
+                                 <tr>
+                                 <td align="left" bgcolor="#ffffff">
+                                 <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                    <tbody>
+                                       <tr>
+                                          <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#000000;line-height:20px;padding-bottom: 20px;">Here is a snippet of our 6-year journey empowering careers, building leaders, and changing lives.</td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                                 </td>
+                              </tr>
+                                 <tr>
+                                    <td align="center" bgcolor="#ffffff" class="padd-top-30 padd-btm-0" style="padding-top: 0px;padding-bottom: 10px;">
+                                    <table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                       <tbody>
+                                          <tr>
+                                             <td align="left" class="flex" style="" valign="top" width="49%">
+                                             <table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                <tbody>
+                                                   <tr>
+                                                      <td align="center" style="padding: 0px;">
+                                                      <table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td align="left" class="padd-top-10" style="padding-top: 10px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#0080cc;line-height: 24px;padding-bottom: 10px;" valign="top" width="20%"><img alt="icon" border="0" class="center-on-narrow" src="https://emeritus.org/wp-content/uploads/2021/10/IC-1.png" style="max-width: 100%;"></td>
+                                                                        <td align="left" class="mobile-font pl" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;padding-bottom: 15px;padding-left: 10px;">50+ School Partners</td>
+                                                                    </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#0080cc;line-height: 24px;padding-bottom: 25px;" valign="top" width="20%"><img alt="icon" border="0" class="center-on-narrow" src="https://emeritus.org/wp-content/uploads/2021/10/IC-3.png" style="max-width: 100%;"></td>
+                                                                        <td align="left" class="mobile-font pl" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;padding-bottom: 15px;padding-left: 10px;">  past learners observed a positive impact on their business or organization</td>
+                                                                    </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#0080cc;line-height: 24px;padding-bottom: 25px;" valign="top" width="20%"><img alt="icon" border="0" class="center-on-narrow" src="https://emeritus.org/wp-content/uploads/2021/10/IC-5.png" style="max-width: 100%;"></td>
+                                                                        <td align="left" class="mobile-font pl" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;padding-bottom: 15px;padding-left: 10px;">80% learners agree that the tools and strategies could be immediately applied to their work</td>
+                                                                    </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#0080cc;line-height: 24px;padding-bottom: 25px;" valign="top" width="20%"><img alt="icon" border="0" class="center-on-narrow" src="https://emeritus.org/wp-content/uploads/2021/10/IC-7.png" style="max-width: 100%;"></td>
+                                                                        <td align="left" class="mobile-font pl padd-btm-0" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;padding-bottom: 15px;padding-left: 10px;">97% learners believe the program was important to get new opportunities at work</td>
+                                                                    </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                               </td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                      </td>
+                                                   </tr>
+                                                </tbody>
+                                             </table>
+                                             </td>
+                                             <td align="left" class="flex3" style="" valign="top" width="2%">&nbsp;</td>
+                                             <td align="left" class="flex no-mb" style="" valign="top" width="49%">
+                                             <table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                <tbody>
+                                                   
+                                                   <tr>
+                                                      <td align="center" style="padding: 0px;">
+                                                      <table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td align="left" class="padd-top-0" style="padding-top: 10px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                      <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#0080cc;line-height: 24px;padding-bottom: 10px;" valign="top" width="20%"><img alt="icon" border="0" class="center-on-narrow" src="https://emeritus.org/wp-content/uploads/2021/10/IC-2.png" style="max-width: 100%;"></td>
+                                                                        <td align="left" class="mobile-font pl" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;padding-bottom: 15px;padding-left: 10px;">2,00,000+ Learners</td>
+                                                                    </tr>
+                                                                      <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#0080cc;line-height: 24px;padding-bottom: 25px;" valign="top" width="20%"><img alt="icon" border="0" class="center-on-narrow" src="https://emeritus.org/wp-content/uploads/2021/10/IC-4.png" style="max-width: 100%;"></td>
+                                                                        <td align="left" class="mobile-font pl" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;padding-bottom: 15px;padding-left: 10px;">94% of the students experienced a positive impact on their career and professional development</td>
+                                                                    </tr>
+                                                                      <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#0080cc;line-height: 24px;padding-bottom: 25px;" valign="top" width="20%"><img alt="icon" border="0" class="center-on-narrow" src="https://emeritus.org/wp-content/uploads/2021/10/IC-6.png" style="max-width: 100%;"></td>
+                                                                        <td align="left" class="mobile-font pl" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;padding-bottom: 15px;padding-left: 10px;">73% of our students agree that having a certificate from the partner school gave a boost to their resume</td>
+                                                                    </tr>
+                                                                     
+                                                                  </tbody>
+                                                               </table>
+                                                               </td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                      </td>
+                                                   </tr>
+                                                </tbody>
+                                             </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                 <td align="left" bgcolor="#ffffff">
+                                 <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                    <tbody>
+                                       <tr>
+                                          <td align="center" style="font-size:12px; font-family:Arial,Helvetica, sans-serif; color:#000000;line-height:20px;padding-bottom: 20px;"><em>Source: Emeritus 2021 Impact Survey conducted by the Emeritus Marketing Research and Customer Insights Team in May</em></td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                                 </td>
+                              </tr>
+                                   
+                              </tbody>
+                           </table>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  </td>
+               </tr>
+          
+					<tr>
+						<td align="left" bgcolor="#eeeeee" style="padding:30px 30px;">
+						<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+							<tbody>
+								<tr>
+									<td align="center" class="mobile-font-head" style="font-size:20px; font-family:Arial,Helvetica, sans-serif; color:#000000;line-height:24px;padding-bottom: 10px;"><strong>Career Transformation Insights</strong></td>
+								</tr>
+								<tr>
+									<td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;">Stay ahead of the learning curve with exclusive access to industry news, trend alerts, thought leadership articles, surveys and reports from the desk of Emeritus.</td>
+								</tr>
+                <tr>
+                  <td align="center" bgcolor="#eeeeee" style="padding-top:30px;">
+                  <table border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                      <tr>
+                        <td class="button-td button-td-primary" style="border-radius: 6px; background:#000000;"><a class="button-a button-a-primary" href="https://emeritus.org/blog?utm_source=SOEmailer&utm_medium=Emailer&utm_campaign=Blogindexpage_Emeritus Newsletter_Sep 2021&utm_content=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  </td>
+                </tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+					<tr>
+                        <td align="left" bgcolor="#ffffff" style="padding: 30px 30px 10px;">
+                           <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                              <tbody>
+                                 <tr>
+                                    <td align="center" class="mobile-font" style="font-size:20px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:26px;padding-bottom: 20px;"><strong>Upcoming Programs</strong>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td align="left" bgcolor="#ffffff" style="padding-bottom: 20px;">
+                                       <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                          <tbody>
+                                             <tr>
+                                                <td align="left" class="flex" valign="top" class="mobile-font" width="49%">
+                                                   <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                      <tbody>
+                                                         <tr>
+                                                            <td>
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;"><strong>Professional Certificate in Coding: Full Stack Development with MERN</strong>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;">
+                                                                           MIT xPRO
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 8px;">
+                                                                           32 weeks, online
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" bgcolor="#ffffff">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" align="left">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #000000;"><a class="mob-btn" href="https://executive-ed.xpro.mit.edu/professional-certificate-coding?utm_source=SOEmailer&utm_medium=Emailer&utm_campaign=SO_B-14375_MO-PCCO_OldBase_EmeritusNewsletter_Sep2021&utm_content=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td style="padding-top:20px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;"><strong>Python for Managers</strong>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;">
+                                                                           Columbia Business School
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 8px;">
+                                                                           2 months, online
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" bgcolor="#ffffff">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" align="left">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #000000;"><a class="mob-btn" href="https://online1.gsb.columbia.edu/columbia/python-for-managers?utm_source=SOEmailer&utm_medium=Emailer&utm_campaign=SO_B-14737_CBS-PYMA_OldBase_EmeritusNewsletter_Sep2021&utm_content=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td style="padding-top:20px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;"><strong>Cybersecurity for Managers: A Playbook</strong>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;">
+                                                                           MIT Sloan Execuitve Education
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 8px;">
+                                                                           6 weeks, online
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" bgcolor="#ffffff">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" align="left">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #000000;"><a class="mob-btn" href="https://executive-ed.mit.edu/cybersecurity?utm_source=SOEmailer&utm_medium=Emailer&utm_campaign=SO_B-14751_MS-CYMA_OldBase_EmeritusNewsletter_Sep2021&utm_content=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td style="padding-top:20px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;"><strong>Front-End Development with React</strong>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;">
+                                                                           MIT xPRO
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 8px;">
+                                                                           11 weeks, online
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" bgcolor="#ffffff">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" align="left">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #000000;"><a class="mob-btn" href="https://executive-ed.xpro.mit.edu/front-end-development-react?utm_source=SOEmailer&utm_medium=Emailer&utm_campaign=SO_B-15282_MO-FREN_OldBase_EmeritusNewsletter_Sep2021&utm_content=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                                <td align="left" valign="top" class="flex" width="2%">
+                                                </td>
+                                                <td align="left" valign="top" class="mobile-font flex" width="49%">
+                                                   <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                      <tbody>
+                                                         <tr>
+                                                            <td>
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;"><strong>Professional Certificate in Coding: Women's Cohort</strong>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;">
+                                                                           MIT xPRO
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 8px;">
+                                                                           32 weeks, online
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" bgcolor="#ffffff">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" align="left">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #000000;"><a class="mob-btn" href="https://executive-ed.xpro.mit.edu/professional-certificate-coding-womens-cohort?utm_source=SOEmailer&utm_medium=Emailer&utm_campaign=SO_B-14682_MO-PCCW_OldBase_EmeritusNewsletter_Sep2021&utm_content=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td style="padding-top:20px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;"><strong>Back End Development</strong>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;">
+                                                                          MIT xPRO
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 8px;">
+                                                                           11 weeks, online
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" bgcolor="#ffffff">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" align="left">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #000000;"><a class="mob-btn" href="https://executive-ed.xpro.mit.edu/back-end-development?utm_source=SOEmailer&utm_medium=Emailer&utm_campaign=SO_B-14689_MO-BAEN_OldBase_EmeritusNewsletter_Sep2021&utm_content=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td style="padding-top:20px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;"><strong>Professional Certificate in UX &amp; Emerging Interaction Design</strong>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;">
+                                                                           NYU Tandon School of Engineering
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 8px;">
+                                                                           6 months, online
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" bgcolor="#ffffff">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" align="left">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #000000;"><a class="mob-btn" href="https://em.online.engineering.nyu.edu/professional-certificate-ux?utm_source=SOEmailer&utm_medium=Emailer&utm_campaign=SO_B-14705_NYUT-PCUX_OldBase_EmeritusNewsletter_Sep2021&utm_content=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>                                                        
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td align="center" bgcolor="#ffffff" style="padding: 0px 30px;">
+                           <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                              <tbody>
+                                 <tr>
+                                    <td align="center" style="font-size:12px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding: 20px 0px;border-top: 2PX solid #000000;">
+                                       Emeritus Institute of Management | Committee for Private Education Registration Number 201510637C | Period: 29 March 2018 to 28 March 2022
+                                    </td>
+                                 </tr>
+                                 
+                              </tbody>
+                           </table>
+                        </td>
+                     </tr>
+				
+					<tr>
+						<td align="left" bgcolor="#ffffff" style="padding:0px 30px 20px;">
+						<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+							<tbody>
+								<tr>
+									<td align="center" style="font-size: 12px; line-height:22px; font-family:Arial,  Helvetica, sans-serif; color:#333333;" class=""><a href="%%unsubscribe%%" style="color: #333333; text-decoration: underline;" target="_blank">unsubscribe from this list</a></td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</body>
+
+</html>

@@ -1,0 +1,907 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>%%subject%%</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style type="text/css">
+        /* CLIENT-SPECIFIC STYLES */
+        
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+        table table table {
+            table-layout: auto;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+        a {
+            text-decoration: none;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        *[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links *,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+            display: none !important;
+            opacity: 0.01 !important;
+        }
+        /* If the above doesn't work, add a .g-img class to any image in question. */
+        img.g-img + div {
+            display: none !important;
+        }
+
+    .ExternalClass,
+    .ExternalClass a,
+    .ExternalClass span,
+    .ExternalClass b,
+    .ExternalClass br,
+    .ExternalClass p,
+    .ExternalClass div {
+      line-height: inherit;
+    }
+    /* iOS BLUE LINKS */
+    
+    a[x-apple-data-detectors] {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+    }
+        .sign a {
+            color: #ffffff;
+        }
+  
+    /* MOBILE STYLES */
+    
+    @media screen and (max-width: 525px) 
+    {
+      .flex, *[class=flex] {
+    width: 100% !important;
+    display: block !important;
+    text-align: center !important;
+}
+.padd-top-10{
+  padding-top: 10px !important;
+}
+      .space{
+        padding: 0 5px !important; 
+      }
+
+        /* ADJUSTS LAYOUT OF LOGO IMAGE */
+      
+      .logo img 
+      {
+        margin: 0 auto !important;
+      }
+
+      /* ALLOWS FOR FLUID TABLES */
+      
+      .wrapper 
+      {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      
+      .responsive-table 
+      {
+        width: 100% !important;
+      }
+
+      /* ADJUSTS LAYOUT OF FONT SIZE */
+
+      .mobile-font,
+      *[class=mobile-font] 
+      {
+        font-size: 16px !important;
+    line-height: 24px !important;
+      }
+      .mobile-font-head,
+      *[class=mobile-font-head] 
+      {
+        font-size: 22px !important;
+        line-height: 30px !important;
+      }
+      .mobile-font-subtitle
+      {
+        font-size: 17px !important;
+        line-height: 27px !important;
+      }
+
+      /* ALLOWS FOR FLUID TABLES DATA */
+
+      .flex, *[class=flex] 
+      {
+            width: 100% !important;
+            display: block !important;
+            margin-bottom: 20px !important;
+          }
+      .flex1,
+      *[class=flex1] 
+      {
+        width: 100% !important;
+        display: block !important;
+        margin-bottom: 2px !important;
+        text-align: center !important;
+      }
+      .flex2,
+      *[class=flex2] {
+        width: 100% !important;
+        display: block !important;
+      }
+      .flex3, *[class=flex3] 
+      {
+        display: none !important;
+      }
+      .icon-width,
+      *[class=icon-width] {
+        width: 20% !important;
+      }
+      .img-full-width, *[class=img-full-width]
+      {
+        width: 100%;
+      }
+
+      .border-tb {
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+      /* ADJUST BORDER ON MOBILE */
+
+      .border_none
+      {
+        border: 0 !important;
+      }
+      
+      /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */      
+
+      .no-mb
+      {
+        margin-bottom: 0px !important;
+      }
+
+      .msonopad 
+      {
+        padding: 0 4px !important;
+      }
+      .no-padding 
+      {
+        padding: 0 !important;
+      }
+      .padd-top-0{
+        padding-top: 0px!important;
+      }
+      .padd-btm-0{
+        padding-bottom: 0px!important;
+      }
+      .mpadd{
+            padding-left: 40px !important;
+            }
+    }
+    /* ANDROID CENTER FIX */
+    
+    div[style*="margin: 16px 0;"] {
+      margin: 0 !important;
+    }
+    </style>
+
+    <!--[if gte mso 9]>
+    <style type="text/css" media="all">
+     .msonopad {
+        padding-right: 10px;
+        text-align:center;
+        width:40px;
+      }
+      img.mso-img {
+        padding-top: 10px;
+      }
+      .bottom-border{
+        margin-bottom: 0 ! important;
+      }
+      img.headerlogo { width: 165px; height:42px;}
+    </style>
+  <![endif]-->
+
+</head>
+
+<body style="margin: 0 !important; padding: 0 !important;">
+<!--[if (gte mso 9)|(ie)]>
+<center>
+<table align="center" border="0" cellspacing="0" cellpadding="0"  width="600">
+<tr>
+<td align="center" valign="top" width="600">
+<![endif]--><!-- HIDDEN PREHEADER TEXT -->
+<div style="mso-hide:all; display:none; font-size:1px; color:#333333; line-height:0;font-family: Arial,Helvetica,  sans-serif; max-height:0; max-width:0; opacity:0; overflow:hidden;">Affiliate mailer</div>
+
+<table align="center">
+    <tbody>
+        <tr>
+            <td align="center" class="container" style="border:1px solid #dddddd;" width="600">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tbody>
+                    <tr>
+                        <td align="left" style="padding: 20px 30px;">
+                        <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                            <tbody>
+                <tr>
+            <td align="left" style="padding: 10px 0px; border-top: 2px solid #000000;border-bottom: 2px solid #00BE6D;">
+            <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+              <tbody>
+                                <tr>
+                                    <td align="left" class="flex" valign="middle" width="50%"><img alt="Emeritus Logo" border="0" class="headerlogo" height="42" src="https://emeritus.org/wp-content/uploads/2021/01/emeritus-new-logo.png" style="max-width: 165;display: inline-block; border: 0px;" title="Emeritus Logo" width="165"> </a></td>
+                                    <td align="right" class="flex1" style="font-size:14px; line-height: 20px; font-family:Arial,Helvetica, sans-serif; color:#000000;" valign="center" width="50%"><b>Online Learning Review: Business Analytics & Data Science</b></td>
+                                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+                            </tbody>
+                        </table>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td align="left" bgcolor="#ffffff" style="padding: 0px 30px 30px 30px;">
+                        <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                            <tbody>
+                <tr>
+                  <td align="center" class="mobile-font-head" style="font-size:20px; font-family:Arial,Helvetica, sans-serif; color:#000000;line-height:26px;"><b>Data Science and Analytics: The Emerging Opportunities and Trends To Deal With Disruptive Change</b></td>
+                </tr>
+                                <tr>
+                                    <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;padding-top: 20px;">What do <b>Amazon, BuzzFeed,</b> and <b>Spotify</b> have in common? They’re all three successful, data-driven, and data reliant. “Customers also liked” to “Which Harry Potter character are you?” to “Discover Weekly”, all of these are a result
+of robust data science technology and data scientists. Globally, industries have first-hand seen what leveraging data
+science technology can do for their businesses. Data-driven decision-making enables organizations to respond to
+consumer trends, offers businesses growth opportunities, and equips them to predict and tackle challenges in a
+disruptive economy.<br>
+                    <br>
+                  Almost every business today receives large volumes of data that seem overwhelming and chaotic. This is the very same <b>data that builds rich customer experiences,</b> simplifies business decisions, and creates innovations that enrich lives across industries. However, in isolation, data is just that – a bunch of rows and columns with hidden insights.</td>
+
+                                </tr>
+              
+                                <tr>
+                                    <td align="center" bgcolor="#ffffff" style="padding-top: 30px;">
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <td class="button-td button-td-primary" style="border-radius: 6px; background:#000000;"><a class="button-a button-a-primary" href="https://emeritus.org/data-science-and-analytics-the-emerging-opportunities-and-trends-to-deal-with-disruptive-change?utm_source=IIMJobsAffiliate&utm_medium=Emailer&utm_campaign=Blogpost_MohamedBenmansourCertificateofBusinessExcellence_Affiliate_EmeritusNewsletter_Sep2021&utm_content=ReadMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Read More</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" bgcolor="#eeeeee" style="padding:30px 30px;">
+                        <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                            <tbody>
+                                <tr>
+                                    <td align="center" class="mobile-font-head" style="font-size:20px; font-family:Arial,Helvetica, sans-serif; color:#000000;line-height:28px;padding-bottom: 10px;"><strong>How a Global Entrepreneur Is Staying Sharp With Help From UC Berkeley and Emeritus</strong></td>
+                                </tr>
+                                <tr>
+                                    <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;padding-bottom: 20px;"><b>Mohamed Benmansour</b> is a seasoned executive with a wide array of experience in technology, internet, and e-commerce ventures. He is a global entrepreneur and the founder of several e-commerce and big data startups. However, at heart, Mohamed is a student and a learner. Since his college graduation in 2003, his career has been his classroom—until 2020, that is.
+                  <br><br>
+                  When the pandemic finally freed up his time for more formalized learning, Mohamed eagerly took advantage of it via <b>UC Berkeley’s Certificate of Business Excellence (COBE) credential</b>. The COBE allows participants to create a personal plan of study around Berkeley’s four academic pillars—leadership and communication, entrepreneurship and innovation, finance and business acumen, and strategy and management—to earn this prestigious certificate. But that wasn’t his primary motivation for enrolling in the program.</td>
+                                </tr>
+                <tr>
+                  <td align="center" bgcolor="#eeeeee" style="padding-top:0px;">
+                  <table border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                      <tr>
+                        <td class="button-td button-td-primary" style="border-radius: 6px; background:#000000;"><a class="button-a button-a-primary" href="https://emeritus.org/how-a-global-entrepreneur-is-staying-sharp-with-help-from-uc-berkeley-and-emeritus?utm_source=IIMJobsAffiliate&utm_medium=Emailer&utm_campaign=Blogpost_DataScienceandAnalytics_Affiliate_EmeritusNewsletter_Sep2021&utm_content=ReadMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Read More</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </td>
+          </tr>
+          <tr>
+                  <td align="center" bgcolor="#ffffff" class="no-padding-section" style="padding: 30px 30px;">
+                  <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                     <tbody>
+                        <tr>
+                           <td align="center" bgcolor="#ffffff" style="padding: 0px 0px 0px 0px;">
+                           <table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                              <tbody>
+                                 <tr>
+                                    <td align="center" class="mobile-font-head" style="font-size:20px; font-family:Arial,Helvetica, sans-serif; color:#000000;line-height:30px;padding-bottom: 20px;"><strong>#TheEmeritusImpact</strong></td>
+                                 </tr>
+                                 <tr>
+                                 <td align="left" bgcolor="#ffffff">
+                                 <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                    <tbody>
+                                       <tr>
+                                          <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#000000;line-height:20px;padding-bottom: 20px;">Here is a snippet of our 6-year journey empowering careers, building leaders, and changing lives.</td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                    <td align="center" bgcolor="#ffffff" class="padd-top-30 padd-btm-0" style="padding-top: 0px;padding-bottom: 10px;">
+                                    <table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                       <tbody>
+                                          <tr>
+                                             <td align="left" class="flex" style="" valign="top" width="49%">
+                                             <table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                <tbody>
+                                                   <tr>
+                                                      <td align="center" style="padding: 0px;">
+                                                      <table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td align="left" class="padd-top-10" style="padding-top: 10px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#0080cc;line-height: 24px;padding-bottom: 10px;" valign="top" width="20%"><img alt="icon" border="0" class="center-on-narrow" src="https://emeritus.org/wp-content/uploads/2021/10/IC-1.png" style="max-width: 100%;"></td>
+                                                                        <td align="left" class="mobile-font pl" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;padding-bottom: 15px;padding-left: 10px;">50+ School Partners</td>
+                                                                    </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#0080cc;line-height: 24px;padding-bottom: 25px;" valign="top" width="20%"><img alt="icon" border="0" class="center-on-narrow" src="https://emeritus.org/wp-content/uploads/2021/10/IC-3.png" style="max-width: 100%;"></td>
+                                                                        <td align="left" class="mobile-font pl" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;padding-bottom: 15px;padding-left: 10px;">  past learners observed a positive impact on their business or organization</td>
+                                                                    </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#0080cc;line-height: 24px;padding-bottom: 25px;" valign="top" width="20%"><img alt="icon" border="0" class="center-on-narrow" src="https://emeritus.org/wp-content/uploads/2021/10/IC-5.png" style="max-width: 100%;"></td>
+                                                                        <td align="left" class="mobile-font pl" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;padding-bottom: 15px;padding-left: 10px;">80% learners agree that the tools and strategies could be immediately applied to their work</td>
+                                                                    </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#0080cc;line-height: 24px;padding-bottom: 25px;" valign="top" width="20%"><img alt="icon" border="0" class="center-on-narrow" src="https://emeritus.org/wp-content/uploads/2021/10/IC-7.png" style="max-width: 100%;"></td>
+                                                                        <td align="left" class="mobile-font pl padd-btm-0" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;padding-bottom: 15px;padding-left: 10px;">97% learners believe the program was important to get new opportunities at work</td>
+                                                                    </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                               </td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                      </td>
+                                                   </tr>
+                                                </tbody>
+                                             </table>
+                                             </td>
+                                             <td align="left" class="flex3" style="" valign="top" width="2%">&nbsp;</td>
+                                             <td align="left" class="flex no-mb" style="" valign="top" width="49%">
+                                             <table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                <tbody>
+                                                   
+                                                   <tr>
+                                                      <td align="center" style="padding: 0px;">
+                                                      <table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td align="left" class="padd-top-0" style="padding-top: 10px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                      <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#0080cc;line-height: 24px;padding-bottom: 10px;" valign="top" width="20%"><img alt="icon" border="0" class="center-on-narrow" src="https://emeritus.org/wp-content/uploads/2021/10/IC-2.png" style="max-width: 100%;"></td>
+                                                                        <td align="left" class="mobile-font pl" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;padding-bottom: 15px;padding-left: 10px;">2,00,000+ Learners</td>
+                                                                    </tr>
+                                                                      <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#0080cc;line-height: 24px;padding-bottom: 25px;" valign="top" width="20%"><img alt="icon" border="0" class="center-on-narrow" src="https://emeritus.org/wp-content/uploads/2021/10/IC-4.png" style="max-width: 100%;"></td>
+                                                                        <td align="left" class="mobile-font pl" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;padding-bottom: 15px;padding-left: 10px;">94% of the students experienced a positive impact on their career and professional development</td>
+                                                                    </tr>
+                                                                      <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#0080cc;line-height: 24px;padding-bottom: 25px;" valign="top" width="20%"><img alt="icon" border="0" class="center-on-narrow" src="https://emeritus.org/wp-content/uploads/2021/10/IC-6.png" style="max-width: 100%;"></td>
+                                                                        <td align="left" class="mobile-font pl" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;padding-bottom: 15px;padding-left: 10px;">73% of our students agree that having a certificate from the partner school gave a boost to their resume</td>
+                                                                    </tr>
+                                                                     
+                                                                  </tbody>
+                                                               </table>
+                                                               </td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                      </td>
+                                                   </tr>
+                                                </tbody>
+                                             </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                 <td align="left" bgcolor="#ffffff">
+                                 <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                    <tbody>
+                                       <tr>
+                                          <td align="center" style="font-size:12px; font-family:Arial,Helvetica, sans-serif; color:#000000;line-height:20px;"><em>Source: Emeritus 2021 Impact Survey conducted by the Emeritus Marketing Research and Customer Insights Team in May</em></td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                                 </td>
+                              </tr>
+                                   
+                              </tbody>
+                           </table>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  </td>
+               </tr>
+          
+                    <tr>
+                        <td align="left" bgcolor="#eeeeee" style="padding:30px 30px;">
+                        <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                            <tbody>
+                                <tr>
+                                    <td align="center" class="mobile-font-head" style="font-size:20px; font-family:Arial,Helvetica, sans-serif; color:#000000;line-height:24px;padding-bottom: 10px;"><strong>Career Transformation Insights</strong></td>
+                                </tr>
+                                <tr>
+                                    <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height:20px;">Stay ahead of the learning curve with exclusive access to industry news, trend alerts, thought leadership articles, surveys and reports from the desk of Emeritus.</td>
+                                </tr>
+                <tr>
+                  <td align="center" bgcolor="#eeeeee" style="padding-top:30px;">
+                  <table border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                      <tr>
+                        <td class="button-td button-td-primary" style="border-radius: 6px; background:#000000;"><a class="button-a button-a-primary" href="https://emeritus.org/blog?utm_source=IIMJobsAffiliate&utm_medium=Emailer&utm_campaign=Blogindexpage_Affiliate_EmeritusNewsletter_Sep%202021&utm_content=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  </td>
+                </tr>
+                            </tbody>
+                        </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" bgcolor="#ffffff" style="padding: 30px 30px 30px;">
+                           <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                              <tbody>
+                                 <tr>
+                                    <td align="center" class="mobile-font" style="font-size:20px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:26px;padding-bottom: 20px;"><strong>Upcoming Programs</strong>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td align="left" bgcolor="#ffffff" style="padding-bottom:0px;">
+                                       <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                          <tbody>
+                                             <tr>
+                                                <td align="left" class="flex" valign="top" class="mobile-font" width="49%">
+                                                   <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                      <tbody>
+                                                         
+                                                         <tr>
+                                                            <td style="padding-top:0px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;"><strong>Marketing Analytics</strong>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;">
+                                                                           Wharton Executive Education
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 8px;">
+                                                                           6 weeks, online
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" bgcolor="#ffffff">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" align="left">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #000000;"><a class="mob-btn" href="https://online-execed.wharton.upenn.edu/marketing-analytics?utm_source=IIMJobsAffiliate&utm_medium=Emailer&utm_campaign=SO_B-14711_WH-MAAN_Affiliate_EmeritusNewsletter_Sep2021&utm_content=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td style="padding-top:20px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;"><strong>Applied Business Analytics</strong>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;">
+                                                                          MIT Sloan Executive Education
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 8px;">
+                                                                           6 weeks, online
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" bgcolor="#ffffff">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" align="left">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #000000;"><a class="mob-btn" href="https://executive-ed.mit.edu/applied-business-analytics?utm_source=IIMJobsAffiliate&utm_medium=Emailer&utm_campaign=SO_B-14756_MS-BA_Affiliate_EmeritusNewsletter_Sep2021&utm_content=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td style="padding-top:20px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;"><strong>Artificial Intelligence: Business Strategies and Applications</strong>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;">
+                                                                           UC Berkeley Executive Education
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 8px;">
+                                                                           2 months, online
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" bgcolor="#ffffff">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" align="left">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #000000;"><a class="mob-btn" href="https://em-executive.berkeley.edu/artificial-intelligence-business-strategies?utm_source=IIMJobsAffiliate&utm_medium=Emailer&utm_campaign=SO_B-14867_BH-AI_Affiliate_EmeritusNewsletter_Sep2021&utm_content=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td style="padding-top:20px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;"><strong>Data Science in Healthcare</strong>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;">
+                                                                           Dartmouth's Quantitative Biomedical Sciences Program
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 8px;">
+                                                                           8 weeks, online
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" bgcolor="#ffffff">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" align="left">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #000000;"><a class="mob-btn" href="https://em.geiselmed.dartmouth.edu/data-science-healthcare?utm_source=IIMJobsAffiliate&utm_medium=Emailer&utm_campaign=SO_B-14380_DT-DSHC_Affiliate_EmeritusNewsletter_Sep2021&utm_content=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td style="padding-top:20px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;"><strong>Business Analytics for Leaders: From Data to Decisions</strong>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;">
+                                                                           UC Berkeley Executive Education
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 8px;">
+                                                                           2 months, online
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" bgcolor="#ffffff">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" align="left">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #000000;"><a class="mob-btn" href="https://em-executive.berkeley.edu/business-analytics-leaders?utm_source=IIMJobsAffiliate&utm_medium=Emailer&utm_campaign=SO_B-14856_BH-BAL_Affiliate_EmeritusNewsletter_Sep2021&utm_content=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td style="padding-top:20px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;"><strong>Business Analytics - Data-driven Decision Making</strong>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;">
+                                                                           Rotman School of Management
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 8px;">
+                                                                           6 weeks, online
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" bgcolor="#ffffff">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" align="left">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #000000;"><a class="mob-btn" href="https://execonline.rotman.utoronto.ca/business-analytics?utm_source=IIMJobsAffiliate&utm_medium=Emailer&utm_campaign=SO_B-14351_ROT-BA_Affiliate_EmeritusNewsletter_Sep2021&utm_content=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr> 
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                                <td align="left" valign="top" class="flex" width="2%">
+                                                </td>
+                                                <td align="left" valign="top" class="mobile-font flex" width="49%">
+                                                   <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                      <tbody>
+                                                         <tr>
+                                                            <td>
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;"><strong>Machine Learning: From Data to Decisions</strong>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;">
+                                                                           MIT Professional Education
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 8px;">
+                                                                           8 weeks, online
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" bgcolor="#ffffff">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" align="left">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #000000;"><a class="mob-btn" href="https://professionalonline1.mit.edu/machine-learning?utm_source=IIMJobsAffiliate&utm_medium=Emailer&utm_campaign=SO_B-13706_MP-ML_Affiliate_EmeritusNewsletter_Sep2021&utm_content=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td style="padding-top:20px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;"><strong>Data Science</strong>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;">
+                                                                          UC Berkeley Executive Education
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 8px;">
+                                                                           10 weeks, online
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" bgcolor="#ffffff">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" align="left">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #000000;"><a class="mob-btn" href="https://em-executive.berkeley.edu/data-science?utm_source=IIMJobsAffiliate&utm_medium=Emailer&utm_campaign=SO_B-14859_BH-DS_Affiliate_EmeritusNewsletter_Sep2021&utm_content=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td style="padding-top:20px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;"><strong>Applied Machine Learning & Python</strong>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;">
+                                                                           Columbia Engineering Executive Education
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 8px;">
+                                                                           5 months, online
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" bgcolor="#ffffff">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" align="left">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #000000;"><a class="mob-btn" href="https://online-exec.cvn.columbia.edu/applied-machine-learning?utm_source=IIMJobsAffiliate&utm_medium=Emailer&utm_campaign=SO_B-14396_CE-AMLPY_Affiliate_EmeritusNewsletter_Sep2021&utm_content=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr> 
+                                                         <tr>
+                                                            <td style="padding-top:20px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;"><strong>Business Analytics: Decision Making with Data</strong>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 5px;">
+                                                                           Kellogg Executive Education
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding-bottom: 8px;">
+                                                                           9 weeks, online
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" bgcolor="#ffffff">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" align="left">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td class="button-td button-td-primary" style="border-radius: 6px; background: #000000;"><a class="mob-btn" href="https://online.em.kellogg.northwestern.edu/business-analytics?utm_source=IIMJobsAffiliate&utm_medium=Emailer&utm_campaign=SO_B-14405_KLG-LEAN_Affiliate_EmeritusNewsletter_Sep2021&utm_content=LearnMore" style="background: #000000; border: 1px solid #000000; font-family: sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 8px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 6px;" target="_blank">Learn More</a></td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                                                                               
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td align="center" bgcolor="#ffffff" style="padding: 0px 30px;">
+                           <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                              <tbody>
+                                 <tr>
+                                    <td align="center" style="font-size:12px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding: 20px 0px;border-top: 2PX solid #000000;">
+                                       Emeritus Institute of Management | Committee for Private Education Registration Number 201510637C | Period: 29 March 2018 to 28 March 2022
+                                    </td>
+                                 </tr>
+                                 
+                              </tbody>
+                           </table>
+                        </td>
+                     </tr>
+                
+                </tbody>
+            </table>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</body>
+
+</html>

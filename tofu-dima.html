@@ -1,0 +1,694 @@
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>%%subject%%</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      <style type="text/css">
+         html,
+         body {
+         margin: 0 auto !important;
+         padding: 0 !important;
+         height: 100% !important;
+         width: 100% !important;
+         }
+         /* What it does: Stops email clients resizing small text. */
+         * {
+         -ms-text-size-adjust: 100%;
+         -webkit-text-size-adjust: 100%;
+         }
+         /* What it does: Centers email on Android 4.4 */
+         div[style*="margin: 16px 0"] {
+         margin: 0 !important;
+         }
+         /* What it does: Stops Outlook from adding extra spacing to tables. */
+         table,
+         td {
+         mso-table-lspace: 0pt !important;
+         mso-table-rspace: 0pt !important;
+         }
+         /* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
+         table {
+         border-spacing: 0 !important;
+         border-collapse: collapse !important;
+         table-layout: fixed !important;
+         margin: 0 auto !important;
+         }
+         table table table {
+         table-layout: auto;
+         }
+         /* What it does: Uses a better rendering method when resizing images in IE. */
+         img {
+         -ms-interpolation-mode:bicubic;
+         }
+         /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+         a {
+         text-decoration: none;
+         }
+         /* What it does: A work-around for email clients meddling in triggered links. */
+         *[x-apple-data-detectors],  /* iOS */
+         .unstyle-auto-detected-links *,
+         .aBn {
+         border-bottom: 0 !important;
+         cursor: default !important;
+         color: inherit !important;
+         text-decoration: none !important;
+         font-size: inherit !important;
+         font-family: inherit !important;
+         font-weight: inherit !important;
+         line-height: inherit !important;
+         }
+         .sign a {
+         color: #333333;
+         }
+         .sign a
+         *[class=sign-padd]{
+         color: #333333;
+         }
+         /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+         .a6S {
+         display: none !important;
+         opacity: 0.01 !important;
+         }
+         /* If the above doesn't work, add a .g-img class to any image in question. */
+         img.g-img + div {
+         display: none !important;
+         }
+         /* MOBILE STYLES */
+         @media screen and (max-width: 525px) {
+         .mobile-font,
+         *[class=mobile-font] {
+         font-size: 18px !important;
+         line-height: 28px !important;
+         }
+         .mobile-font3,
+         *[class=mobile-font3] {
+         padding-bottom: 10px !important;
+         }
+         .mobile-font-subtitle {
+         font-size: 24px !important;
+         line-height: 34px !important;
+         }
+         .mobile-font-subtitle-font {
+         font-size: 17px !important;
+         line-height: 27px !important;
+         }
+         .spacing{
+         padding: 5px 0 8px 15px !important;
+         }
+         .border {
+         border-left: 0px solid #ffffff;
+         border-right: 0px solid #ffffff;
+         }
+         .text-center {
+         text-align: center;
+         }
+         .padding-top {
+         padding-top: 20px !important;
+         }
+         .text-left {
+         text-align: left !important;
+         }
+         .no-padd{
+         padding:0 !important;
+         }
+         .msonopad {
+         padding: 0 4px !important;
+         }
+         .flex,
+         *[class=flex] {
+         width: 100% !important;
+         display: block !important;
+         text-align: center !important;
+         }
+         .flex2,
+         *[class=flex2] {
+         width: 100% !important;
+         display: block !important;
+         text-align: center !important;
+         margin-bottom: 2px !important;
+         }
+         td.flex.brdtopbottom.padd-bottom {
+         border:1px solid #dedede;
+         padding: 20px 0;
+         border-left:none !important;
+         border-right:none !important;
+         }
+         .flex3,
+         *[class=flex3] {
+         width: 100% !important;
+         display: none !important;
+         }
+         .txt-cent{
+         text-align:center !important;
+         padding:10px 0px !important;
+         }
+         .icon-width,
+         *[class=icon-width] {
+         width: 20% !important;
+         }
+         .bottom-border{
+         border-bottom:0px solid !important;
+         }
+         .btn-padd-bottm{
+         padding-top:0px !important;
+         }
+         .mobile-font-head,
+         *[class=mobile-font-head] {
+         font-size: 27px !important;
+         line-height: 37px !important;
+         }
+         /* ALLOWS FOR FLUID TABLES */
+         .wrapper {
+         width: 100% !important;
+         max-width: 100% !important;
+         }
+         /* ADJUSTS LAYOUT OF LOGO IMAGE */
+         .logo img {
+         margin: 0 auto !important;
+         }
+         /* FULL-WIDTH TABLES */
+         .responsive-table {
+         width: 100% !important;
+         }
+         /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */
+         .padding {
+         padding: 10px 15px 10px 15px !important;
+         }
+         .no-padding {
+         padding: 0 !important;
+         }   
+         .section-notop-padding {
+         padding: 0px 15px 30px 15px !important;
+         }
+         .section-padding {
+         padding:35px 15px 20px 15px !important;
+         }
+         .section-padding-note {
+         padding: 20px 30px 20px 30px !important;
+         }
+         .padd{
+         padding:0px 15px 10px 15px !important;
+         }
+         .section-padding-main{
+         padding: 30px 15px 30px 15px !important;
+         }
+         .logo-padd{
+         padding: 10px 20px 10px 20px !important;
+         }
+         .main-section-no-padd {
+         padding: 15px 15px 15px 15px !important;
+         }
+         .footer-title {
+         padding-bottom: 10px !important;
+         }
+         .pt-10{
+            padding-top: 15px !important;
+         }
+         .mobile-padd{
+         padding-top:18px !important;
+         }
+         .faculty-padding{
+         padding: 0px 15px 10px 15px !important;
+         }
+         /* ADJUST BUTTONS ON MOBILE */
+         .mobile-button-container {
+         margin: 0 auto;
+         width: 100% !important;
+         }
+         td.top_pd{
+         padding-top:30px !important;
+         }
+         .mobile-button {
+         padding: 15px !important;
+         border: 0 !important;
+         font-size: 18px !important;
+         display: block !important;
+         }
+         .mob-btn-padd-top-10
+         {
+         padding-top: 10px !important;
+         }
+         .padd-top_0{
+         padding: 0 0 25px 0 !important;
+         text-align: center;
+         }
+         .border_none {
+         border: 0 !important;
+         }
+         td.mobile-font2 {
+         padding: 4px 15px !important;
+         font-size: 18px !important;
+         line-height: 28px !important;
+         }
+         td.mobile-font.no-leftpadd {
+         text-align: center !important;
+         padding: 0px !important;
+         }
+         td.logo_center {
+         float: none !important;
+         text-align: center;
+         margin: 0 auto;
+         padding:10px 0 !important;
+         }
+         td.logo_center img {
+         display: inline-block;
+         margin: 0 auto;
+         }
+         .sign-padd,
+         *[class=sign-padd]{
+         padding:0 15px 15px 15px !important;
+         }
+         td.flex.border-top{
+         border-top: 1px solid #d2d2d2;
+         padding-top: 30px !important;
+         }
+         .border-topp{
+         border-top: 1px solid #d2d2d2 !important;
+         padding-top: 20px !important;
+         margin-top:10px !important;
+         }
+         td.flex2.no-padding.border-topp.padd-botm{
+         padding-bottom:20px !important;
+         }
+         }
+         /* ANDROID CENTER FIX */
+         div[style*="margin: 16px 0;"] {
+         margin: 0 !important;
+         }
+      </style>
+      <!--[if gte mso 9]>
+      <style type="text/css" media="all">
+         .msonopad {
+         padding-right: 10px;
+         text-align:center;
+         width:40px;
+         }
+         img.mso-img {
+         padding-top: 10px;
+         }
+         img.headerlogo { width: 243px; height:62px;}
+      </style>
+      <![endif]-->
+   </head>
+   <body style="margin: 0 !important; padding: 0 !important;">
+<!--[if (gte mso 9)|(ie)]>
+      <center>
+      <table align="center" border="0" cellspacing="0" cellpadding="0"  width="600">
+      <tr>
+         <td align="center" valign="top" width="600">
+            <![endif]--><!-- HIDDEN PREHEADER TEXT -->
+<div style="mso-hide:all; display:none; font-size:1px; color:#333333; line-height:0;font-family:Arial,Helvetica, sans-serif; max-height:0; max-width:0; opacity:0; overflow:hidden;">There’s a free digital marketing webinar coming up that you won’t want to miss!</div>
+
+<table align="center">
+	<tbody>
+		<tr>
+			<td align="left" class="container" style="border:1px solid #dddddd;" width="600">
+			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tbody>
+					<tr>
+						<td align="left" bgcolor="#ffffff" style="padding:20px 20px 20px 20px;">
+						<table align="left" border="0" cellpadding="0" cellspacing="0" class="wrapper" width="100%">
+							<tbody>
+								<tr>
+									<td align="left" class=""><img alt="Emeritus" class="headerlogo" height="62" src="https://emeritus.org/wp-content/uploads/2021/01/emeritus-new-logo.png" style="max-width: 243px;display: inline-block; border: 0px;" title="Emeritus" width="243"></td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td align="left">
+						<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+							<tbody>
+								<tr>
+									<td align="center" valign="middle" class=""><img alt="Digital Marketing" border="0" src="https://emeritus.org/wp-content/uploads/2021/11/DIMA-mailer-banner.jpg" style="max-width:100%; display:block; border:0;" title="Digital Marketing"></td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" bgcolor="#ffffff" style="padding: 30px 30px 30px 30px;">
+						<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+							<tbody>
+								<tr>
+									<td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:26px;">Dear %%first_name%%,<br>
+									<br>
+									Emeritus partners with Ivy League institutions to help marketing professionals around the globe advance their skills and accelerate their careers in digital marketing. And you can get expert insights on the latest industry trends and career best practices in digital marketing by attending one of three upcoming 60-minute webinars. You won’t want to miss these knowledge-packed sessions, presented by Emeritus and featuring a live interview and Q&amp;A discussions with industry experts.</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" bgcolor="#ffffff">
+						<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+							<tbody>
+								<tr>
+									<td align="center" valign="top">
+									<table border="0" cellpadding="0" cellspacing="0" valign="top" width="100%">
+										<tbody>
+											<tr>
+												<td align="left" bgcolor="#cececd" valign="top" width="100%">
+												<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+													<tbody>
+														<tr>
+															<td align="left" class="mobile-font" pardot-data="" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#000000; line-height:24px; text-align: left; padding: 6px 30px;" valign="top"><strong>Today in Digital Marketing: Trends in Modern Marketing Practices (Live Online)</strong></td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+											</tr>
+											<tr>
+												<td align="left" style="padding: 0px 30px;" valign="top" width="100%">
+												<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+													<tbody>
+														<tr>
+															<td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#333333;line-height:30px;padding: 20px 6px 0px 0px;" valign="top">Explore the digital marketing landscape and examine strategic frameworks for employing modern marketing practices.</td>
+														</tr>
+														<tr>
+															<td align="center" class="no-padding pt-10" style="padding-top: 20px;padding-left: 30px;">
+															<table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+																<tbody>
+																	<tr>
+																		<td align="left" class="no-padding" style="padding-top: 0px;">
+																		<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+																			<tbody>
+																				<tr>
+																					<td align="left" class="mobile-font" style="font-size:10px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height: 22px;" valign="top" width="3%">●</td>
+																					<td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height: 25px;padding-left:3px;padding-bottom:6px;" valign="top">Learn about the latest digital marketing trends</td>
+																				</tr>
+																				<tr>
+																					<td align="left" class="mobile-font" style="font-size:10px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height: 22px;" valign="top" width="3%">●</td>
+																					<td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height: 25px;padding-left:3px;padding-bottom:6px;" valign="top">Examine how real-world applications of digital marketing are creating value and transforming organizations</td>
+																				</tr>
+																				<tr>
+																					<td align="left" class="mobile-font" style="font-size:10px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height: 22px;" valign="top" width="3%">●</td>
+																					<td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height: 25px;padding-left:3px;padding-bottom:20px;" valign="top">Discover opportunities to advance your digital marketing skills</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+															</td>
+														</tr>
+														<tr>
+															<td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#333333;line-height:30px;padding-bottom: 8px;" valign="top"><strong>SPEAKERS:</strong></td>
+														</tr>
+														<tr>
+															<td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#333333;line-height:30px;padding-bottom: 8px;" valign="top"><strong>Terry Rice,</strong> Business Development Consultant and Staff Writer at Entrepreneur magazine</td>
+														</tr>
+														<tr>
+															<td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#333333;line-height:30px;padding-bottom: 15px;" valign="top"><strong>Will Scott,</strong> Steelpoint Marketing</td>
+														</tr>
+														<tr>
+															<td align="left" bgcolor="#ffffff" style="padding: 0px 0px 20px 0px;">
+															<table align="left" border="0" cellpadding="0" cellspacing="0">
+																<tbody>
+																	<tr>
+																		<td align="left" bgcolor="#092837" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#ffffff;padding:10px;" valign="top">Nov. 12, 2021 – 12 p.m. ET</td>
+																	</tr>
+																</tbody>
+															</table>
+															</td>
+														</tr>
+														<tr>
+															<td align="left" class="mobile-font" style="font-size:15px; font-family:Arial,Helvetica, sans-serif; color:#000000;" valign="top"><a href="https://emeritus.zoom.us/webinar/register/3416355459146/WN_B3PlypjMTbaRiBQmO2DTJw" style=" text-decoration:none;color:#29b56c;" target="_blank"><strong>REGISTER NOW</strong></a></td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" bgcolor="#ffffff" style="padding-top: 30px;">
+						<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+							<tbody>
+								<tr>
+									<td align="center" valign="top">
+									<table border="0" cellpadding="0" cellspacing="0" valign="top" width="100%">
+										<tbody>
+											<tr>
+												<td align="left" bgcolor="#cececd" valign="top" width="100%">
+												<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+													<tbody>
+														<tr>
+															<td align="left" class="mobile-font" pardot-data="" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#000000; line-height:24px; text-align: left; padding: 6px 30px;" valign="top"><strong>Demystifying Digital Marketing</strong></td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+											</tr>
+											<tr>
+												<td align="left" style="padding: 0px 30px;" valign="top" width="100%">
+												<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+													<tbody>
+														<tr>
+															<td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#333333;line-height:30px;padding: 20px 6px 0px 0px;" valign="top">Get a snapshot into the world of digital marketing:</td>
+														</tr>
+														<tr>
+															<td align="center" class="no-padding pt-10" style="padding-top: 20px;padding-left: 30px;">
+															<table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+																<tbody>
+																	<tr>
+																		<td align="left" class="no-padding" style="padding-top: 0px;">
+																		<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+																			<tbody>
+																				<tr>
+																					<td align="left" class="mobile-font" style="font-size:10px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height: 22px;" valign="top" width="3%">●</td>
+																					<td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height: 25px;padding-left:3px;padding-bottom:6px;" valign="top">Learn to formulate and communicate key questions that can be addressed via digital marketing</td>
+																				</tr>
+																				<tr>
+																					<td align="left" class="mobile-font" style="font-size:10px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height: 22px;" valign="top" width="3%">●</td>
+																					<td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height: 25px;padding-left:3px;padding-bottom:6px;" valign="top">Explore real-world applications of digital marketing via case studies</td>
+																				</tr>
+																				<tr>
+																					<td align="left" class="mobile-font" style="font-size:10px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height: 22px;" valign="top" width="3%">●</td>
+																					<td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height: 25px;padding-left:3px;padding-bottom:20px;" valign="top">Discover opportunities to advance your digital marketing skills</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+															</td>
+														</tr>
+														<tr>
+															<td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#333333;line-height:30px;padding-bottom: 8px;" valign="top"><strong>SPEAKERS:</strong></td>
+														</tr>
+														<tr>
+															<td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#333333;line-height:30px;padding-bottom: 20px;" valign="top"><strong>Nick Bhavsar,</strong> Bhavsar Growth Consulting</td>
+														</tr>
+														<tr>
+															<td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#333333;line-height:30px;padding-bottom: 15px;" valign="top"><strong>Will Scott,</strong> Steelpoint Marketing</td>
+														</tr>
+														<tr>
+															<td align="left" bgcolor="#ffffff" style="padding: 0px 0px 20px 0px;">
+															<table align="left" border="0" cellpadding="0" cellspacing="0">
+																<tbody>
+																	<tr>
+																		<td align="left" bgcolor="#092837" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#ffffff;padding:10px;" valign="top">Nov. 16, 2021 – 6 p.m. ET</td>
+																	</tr>
+																</tbody>
+															</table>
+															</td>
+														</tr>
+														<tr>
+															<td align="left" class="mobile-font" style="font-size:15px; font-family:Arial,Helvetica, sans-serif; color:#000000;" valign="top"><a href="https://emeritus.zoom.us/webinar/register/8616354725209/WN_RSGkUwaNTl69FClOu9-zDw" style=" text-decoration:none;color:#29b56c;" target="_blank"><strong>REGISTER NOW</strong></a></td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" bgcolor="#ffffff" style="padding-top: 30px;">
+						<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+							<tbody>
+								<tr>
+									<td align="center" valign="top">
+									<table border="0" cellpadding="0" cellspacing="0" valign="top" width="100%">
+										<tbody>
+											<tr>
+												<td align="left" bgcolor="#cececd" valign="top" width="100%">
+												<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+													<tbody>
+														<tr>
+															<td align="left" class="mobile-font" pardot-data="" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#000000; line-height:24px; text-align: left; padding: 6px 30px;" valign="top"><strong>Career Roadmap: Navigating a Career in Digital Marketing</strong></td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+											</tr>
+											<tr>
+												<td align="left" style="padding: 0px 30px;" valign="top" width="100%">
+												<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+													<tbody>
+														<tr>
+															<td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#333333;line-height:30px;padding: 20px 6px 0px 0px;" valign="top">Gain insights on launching and advancing your career in digital marketing:</td>
+														</tr>
+														<tr>
+															<td align="center" class="no-padding pt-10" style="padding-top: 20px;padding-left: 30px;">
+															<table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+																<tbody>
+																	<tr>
+																		<td align="left" class="no-padding" style="padding-top: 0px;">
+																		<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+																			<tbody>
+																				<tr>
+																					<td align="left" class="mobile-font" style="font-size:10px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height: 22px;" valign="top" width="3%">●</td>
+																					<td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height: 25px;padding-left:3px;padding-bottom:6px;" valign="top">Learn about different digital marketing careers</td>
+																				</tr>
+																				<tr>
+																					<td align="left" class="mobile-font" style="font-size:10px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height: 22px;" valign="top" width="3%">●</td>
+																					<td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height: 25px;padding-left:3px;padding-bottom:6px;" valign="top">Hear best practices for navigating a career in digital marketing</td>
+																				</tr>
+																				<tr>
+																					<td align="left" class="mobile-font" style="font-size:10px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height: 22px;" valign="top" width="3%">●</td>
+																					<td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#272525;line-height: 25px;padding-left:3px;padding-bottom:20px;" valign="top">Discover opportunities to advance your digital marketing skills</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+															</td>
+														</tr>
+														<tr>
+															<td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#333333;line-height:30px;padding-bottom: 8px;" valign="top"><strong>SPEAKERS:</strong></td>
+														</tr>
+														<tr>
+															<td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#333333;line-height:30px;padding-bottom: 15px;" valign="top"><strong>Kevin Mai,</strong> AdTaxi</td>
+														</tr>
+														<tr>
+															<td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#333333;line-height:30px;padding-bottom: 15px;" valign="top"><strong>Emmett Keith-Jones,</strong> Google</td>
+														</tr>
+														<tr>
+															<td align="left" bgcolor="#ffffff" style="padding: 0px 0px 20px 0px;">
+															<table align="left" border="0" cellpadding="0" cellspacing="0">
+																<tbody>
+																	<tr>
+																		<td align="left" bgcolor="#092837" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#ffffff;padding:10px;" valign="top">Nov. 19, 2021 – 12 p.m. ET</td>
+																	</tr>
+																</tbody>
+															</table>
+															</td>
+														</tr>
+														<tr>
+															<td align="left" class="mobile-font" style="font-size:15px; font-family:Arial,Helvetica, sans-serif; color:#000000;" valign="top"><a href="https://emeritus.zoom.us/webinar/register/9616358025742/WN_UhaORmoARjWDzIX5Jhjq-w" style=" text-decoration:none;color:#29b56c;" target="_blank"><strong>REGISTER NOW</strong></a></td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" style="background: #ffffff;">
+						<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+							<tbody>
+								<tr>
+									<td align="left">
+									<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+										<tbody>
+											<tr>
+												<td align="left" bgcolor="#ffffff" style="padding: 30px 30px 0px 30px;">
+												<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+													<tbody>
+														<tr>
+															<td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:26px;">As the digital marketing industry continues to expand and evolve, demand for skilled digital marketers is on the rise. Take advantage of this limited-time opportunity to learn more about the industry and how you can build your digital marketing career.</td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+											</tr>
+											<tr>
+												<td align="left" bgcolor="#ffffff" style="padding: 30px;">
+												<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+													<tbody>
+														<tr>
+															<td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:26px;border-top: 1px solid #dddddd;padding-top: 30px;">Warm regards,<br>
+															The Emeritus Team</td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+											</tr>
+											<tr>
+												<td align="center" bgcolor="#ffffff" style="padding: 0px 30px;">
+												<table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+													<tbody>
+														<tr>
+															<td align="center" style="font-size:11px; font-family:Arial,Helvetica, sans-serif; color: #000000;line-height:22px;padding: 20px 0px;border-top: 1PX solid #dddddd;" class="">Emeritus Institute of Management | Committee for Private Education Registration Number 201510637C | Period: 29 March 2018 to 28 March 2022</td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+											</tr>
+											<tr>
+												<td align="center" bgcolor="#ffffff"><!--[if (gte mso 9)|(IE)]>
+                                                   <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
+                                                      <tr>
+                                                         <td align="center" valign="top" width="500">
+                                                            <![endif]--><!-- UNSUBSCRIBE COPY -->
+												<table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive-table" style="max-width: 500px;" width="100%">
+													<tbody>
+														<tr>
+															<td align="center" style="padding-bottom:20px; padding-top:0px;font-size: 12px; line-height:22px; font-family:Arial,  Helvetica, sans-serif; color:#333333;" class=""><a href="%%unsubscribe%%" style="color: #333333; text-decoration: underline;" target="_blank">unsubscribe from this list</a></td>
+														</tr>
+													</tbody>
+												</table>
+												<!--[if (gte mso 9)|(IE)]>
+                                                         </td>
+                                                      </tr>
+                                                   </table>
+                                                   <![endif]--></td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!--[if (gte mso 9)|(IE)]>
+                        </td>
+                     </tr>
+               </table>
+               <![endif]--></td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>
