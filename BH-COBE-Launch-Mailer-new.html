@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>%%subject%%</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <style type="text/css">
+         html,
+         body {
+         margin: 0 auto !important;
+         padding: 0 !important;
+         height: 100% !important;
+         width: 100% !important;
+         }
+         /* What it does: Stops email clients resizing small text. */
+         * {
+         -ms-text-size-adjust: 100%;
+         -webkit-text-size-adjust: 100%;
+         }
+         /* What it does: Centers email on Android 4.4 */
+         div[style*="margin: 16px 0"] {
+         margin: 0 !important;
+         }
+         /* What it does: Stops Outlook from adding extra spacing to tables. */
+         table,
+         td {
+         mso-table-lspace: 0pt !important;
+         mso-table-rspace: 0pt !important;
+         }
+         /* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
+         table {
+         border-spacing: 0 !important;
+         border-collapse: collapse !important;
+         table-layout: fixed !important;
+         margin: 0 auto !important;
+         }
+         table table table {
+         table-layout: auto;
+         }
+         /* What it does: Uses a better rendering method when resizing images in IE. */
+         img {
+         -ms-interpolation-mode:bicubic;
+         }
+         /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+         a {
+         text-decoration: none;
+         }
+         /* What it does: A work-around for email clients meddling in triggered links. */
+         *[x-apple-data-detectors],  /* iOS */
+         .unstyle-auto-detected-links *,
+         .aBn {
+         border-bottom: 0 !important;
+         cursor: default !important;
+         color: inherit !important;
+         text-decoration: none !important;
+         font-size: inherit !important;
+         font-family: inherit !important;
+         font-weight: inherit !important;
+         line-height: inherit !important;
+         }
+         /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+         .a6S {
+         display: none !important;
+         opacity: 0.01 !important;
+         }
+         /* If the above doesn't work, add a .g-img class to any image in question. */
+         img.g-img + div {
+         display: none !important;
+         }
+         .ExternalClass,
+         .ExternalClass a,
+         .ExternalClass span,
+         .ExternalClass b,
+         .ExternalClass br,
+         .ExternalClass p,
+         .ExternalClass div {
+         line-height: inherit;
+         }
+         /* iOS BLUE LINKS */
+         a[x-apple-data-detectors] {
+         color: inherit !important;
+         text-decoration: none !important;
+         font-size: inherit !important;
+         font-family: inherit !important;
+         font-weight: inherit !important;
+         line-height: inherit !important;
+         }
+         .msonopad {
+         /*padding: 0 4px;*/
+         padding: 0 5px 0px 15px;
+         }
+         .body-wrap {
+         background-color: #e5efea;
+         text-align: center;
+         }
+         .mpt2, [owa] .mpt2,
+         *[class=mpt2]{
+         line-height:0px !important;
+         font-size:2px !important;
+         padding-top:5px;
+         }
+         .sign a{
+         color:#ffffff !important;
+         }
+         /* MOBILE STYLES */
+         @media screen and (max-width: 525px) {
+         .mobile-font,
+         *[class=mobile-font] {
+         font-size: 18px !important;
+         line-height: 28px !important;
+         }
+         .faculty-designation,
+         *[class=faculty-designation] {
+         font-size: 18px !important;
+         line-height: 28px !important;
+         }
+         .mobile_width,
+         *[class=mobile_width] {
+         font-size: 20px !important;
+         line-height: 30px !important;
+         }
+         .mobile-font-subfont,
+         *[class=mobile-font-subfont] {
+         font-size: 16px !important;
+         line-height: 26px !important;
+         text-align: center !important;
+         }
+         td.btn-padd-new {
+         padding:10px 30px 10px 30px !important;
+         }
+         td.btn-padd {
+         padding: 10px 30px 40px 30px !important;
+         }
+         .mobile-font-subhead mobile_width,
+         *[class=mobile-font-subhead] {
+         font-size: 21px !important;
+         line-height: 31px !important;
+         text-align: center !important;
+         }
+         .mobile-font-subtitle-font {
+         font-size: 17px !important;
+         line-height: 27px !important;
+         }
+         .spacing{
+         padding: 5px 0 8px 0 !important;
+         }
+         .border {
+         border-left: 0px solid #ffffff;
+         border-right: 0px solid #ffffff;
+         }
+         .program-padd {
+         padding: 10px 2px 10px 2px !important;
+         }
+         .text-center {
+         text-align: center;
+         }
+         .mpt2, [owa] .mpt2,
+         *[class=mpt2]{
+         line-height:0px !important;
+         font-size:2px !important;
+         padding-top:8px !important;
+         }
+         .mobile_alignment {
+         text-align: left !important;
+         }
+         .padding-top {
+         padding-top: 20px !important;
+         }
+         .text-left {
+         text-align: left !important;
+         }
+         .mobile-font-subhead {
+         font-size: 21px !important;
+         line-height: 31px !important;
+         }
+         .no-padd{
+         padding:0 !important;
+         }
+         .msonopad {
+         padding: 0 4px !important;
+         }
+         .flex,
+         *[class=flex] {
+         width: 100% !important;
+         display: block !important;
+         text-align: center !important;
+         }
+         .padd-top-10 ,
+         *[class=padd-top-10 ] {
+         padding-top: 10px !important;
+         }
+         .flex1,
+         *[class=flex1] {
+         width: 100% !important;
+         display: none !important;
+         }
+         .flex2,
+         *[class=flex2] {
+         width: 100% !important;
+         display: block !important;
+         margin-bottom: 2px !important;
+         }
+         .flex3,
+         *[class=flex3] {
+         width: 100% !important;
+         display: block !important;
+         text-align: center !important;
+         padding: 0px !important;
+         margin-bottom: 30px;
+         border-bottom: 1px solid #d2d2d2;
+         }
+         .program-padd {
+         padding: 10px 2px 10px 2px !important;
+         }
+         .padding-bottom_0 {
+         padding-bottom: 0 !important;
+         padding-top: 0 !important;
+         }
+         table.center_mob {
+         width: 100%;
+         }
+         td#logo_shift {
+         text-align: center !important;
+         }
+         .icon-width,
+         *[class=icon-width] {
+         width: 20% !important;
+         }
+         .content-width,
+         *[class=content-width] {
+         width: 80% !important;
+         }
+         .brdtopbottom,
+         *[class=brdtopbottom] {
+         border-left: 0px !important;
+         border-right: 0px !important;
+         border-bottom: 1px solid #dedede;
+         border-top: 1px solid #dedede;
+         padding-top: 20px !important;
+         padding-bottom: 20px !important;
+         }
+         .padd-bottom {
+         padding: 20px 0px 20px 0px !important;
+         text-align: center;
+         }
+         .mobile-font-head,
+         *[class=mobile-font-head] {
+         font-size: 27px !important;
+         line-height: 37px !important;
+         padding: 30px 0px !important;
+         }
+         .star-padd,
+         *[class=star-padd] {
+         padding-top: 0px !important;
+         }
+         /* ALLOWS FOR FLUID TABLES */
+         .wrapper {
+         width: 100% !important;
+         max-width: 100% !important;
+         }
+         /* ADJUSTS LAYOUT OF LOGO IMAGE */
+         .logo img {
+         margin: 0 auto !important;
+         }
+         /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
+         .mobile-hide {
+         display: none !important;
+         }
+         .img-max {
+         max-width: 100% !important;
+         width: 100% !important;
+         height: auto !important;
+         }
+         /* FULL-WIDTH TABLES */
+         .responsive-table {
+         width: 100% !important;
+         }
+         /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */
+         .padding {
+         padding: 10px 5% 15px 5% !important;
+         }
+         .padding-meta {
+         padding: 30px 5% 0px 5% !important;
+         text-align: center;
+         }
+         .padd-tittle{
+         padding: 30px 0 25px 0 !important;
+         text-align: center;
+         }
+         .padding-copy {
+         padding: 10px 5% 10px 5% !important;
+         text-align: center;
+         }
+         .p0 {
+         padding: 0px 0px 20px !important;
+         }
+         .mpt1 {
+         padding-top: 1px !important;
+         }
+         .mpadd{
+         padding-left: 40px !important;
+         }
+         .section-notop-padding {
+         padding: 0px 15px 20px 15px !important;
+         }
+         .section-padding {
+         padding: 20px 30px 20px 30px !important;
+         }
+         .section-padding-bt{
+         padding: 0px 30px 0px 30px !important;
+         }
+         .section-padding-btm{
+         padding: 20px 30px 30px 30px !important;
+         }
+         .section-padding-main{
+         padding:0px 30px 30px 30px !important;
+         }
+         .mobile-padd{
+         padding-top:18px !important;
+         }
+         .faculty-padding{
+         padding: 20px 30px 0px 30px !important;
+         }
+         /* ADJUST BUTTONS ON MOBILE */
+         .mobile-button-container {
+         margin: 0 auto;
+         width: 100% !important;
+         }
+         .mobile-button {
+         padding: 15px !important;
+         border: 0 !important;
+         font-size: 18px !important;
+         display: block !important;
+         }
+         .border_none {
+         border: 0 !important;
+         }
+         .mobile_width{
+         text-align:center!important;
+         }
+         .mob-cta{
+            font-size: 14px!important;
+          padding: 18px 30px!important;
+         }
+         .plr{
+            padding: 20px 0px 0px!important;
+         }
+         }
+         /* ANDROID CENTER FIX */
+         div[style*="margin: 16px 0;"] {
+         margin: 0 !important;
+         }
+      </style>
+      <!--[if gte mso 9]>
+      <style type="text/css" media="all">
+         .msonopad {
+         padding-right: 10px;
+         text-align:center;
+         width:40px;
+         }
+         img.mso-img {
+         padding-top: 10px;
+         line-height:24px;
+         }
+         img.headerlogo { width: 178px; height:36px;}
+         img.headerlogo2 { width: 178px; height:36px;}
+      </style>
+      <![endif]-->
+   </head>
+   <body style="margin: 0 !important; padding: 0 !important;">
+      <!--[if (gte mso 9)|(ie)]>
+      <center>
+      <table align="center" border="0" cellspacing="0" cellpadding="0"  width="600">
+         <tr>
+            <td align="center" valign="top" width="600">
+               <![endif]--><!-- HIDDEN PREHEADER TEXT -->
+               <div style="mso-hide:all; display:none; font-size:1px; color:#333333; line-height:0;font-family: Arial,Helvetica,  sans-serif; max-height:0; max-width:0; opacity:0; overflow:hidden;">Keep up your momentum! Earn more curriculum days towards UC Berkeley’s Certificate of Business Excellence.</div>
+               <table align="center">
+                  <tbody>
+                     <tr>
+                        <td align="center" class="container" style="border:1px solid #dddddd;" width="600">
+                           <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                              <tbody>
+                                 <tr>
+                                    <td align="left" bgcolor="#ffffff" style="padding: 20px 20px 10px 20px;">
+                                       <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                          <tbody>
+                                             <tr>
+                                                <td align="left" class="flex no-mb logo" valign="middle"><a href="https://emeritus.org/universities/uc-berkeley-executive-education/?utm_source=product&utm_medium=emailer&utm_campaign=cobe_paid_apps&utm_content=Logo" target="_blank"><img alt="UC Berkeley Executive Education" border="0" class="headerlogo" height="36" src="https://emeritus.org/wp-content/uploads/2020/06/ed-logo.png" style="max-width: 211px;display: inline-block; border: 0px;padding-top: 2px;" title="UC Berkeley Executive Education" width="178"> </a></td>
+                                                <td align="right" class="flex no-mb padd-top-10 logo" valign="middle"><a href="https://emeritus.org/universities/uc-berkeley-executive-education/?utm_source=product&utm_medium=emailer&utm_campaign=cobe_paid_apps&utm_content=Logo" target="_blank"><img alt="UC Berkeley Haas" border="0" class="headerlogo2" height="36" src="https://emeritus.org/wp-content/uploads/2020/05/berkeley-retina.png" style="max-width: 242px; display:block; border:0;" title="UC Berkeley Haas" width="178"> </a></td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td align="center" bgcolor="#ffffff">
+                                       <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                          <tbody>
+                                             <tr>
+                                                <td align="center"  valign="middle"><a href="https://emeritus.org/universities/uc-berkeley-executive-education/?utm_source=product&utm_medium=emailer&utm_campaign=cobe_paid_apps&utm_content=Banner" target="_blank"><img alt="UC Berkeley Executive Education" border="0" src="https://emeritus.org/wp-content/uploads/2021/09/BH-COBE-banner.jpg" style="max-width: 100%;display: inline-block; border: 0px;" title="UC Berkeley Executive Education"> </a></td>                                                
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td align="left" bgcolor="#ffffff" style="padding:0px 20px 0px 20px;">
+                                       <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                          <tbody>
+                                             <tr>
+                                                <td align="left" bgcolor="#ffffff" style="padding: 30px;">
+                                                   <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                      <tbody>
+                                                         <tr>
+                                                            <td align="left" class="mobile-font-subhead" style="font-size:22px; font-weight: bold; font-family:Arial,Helvetica, sans-serif; color:#15284b;padding:0px 0px 20px 0px; line-height:32px;"><b>You are on your way to earning UC Berkeley Executive Education’s prestigious Certificate of Business Excellence.</b></td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #272525;line-height:26px;padding-bottom: 20px;">Build on the curriculum days you have accrued by enrolling in the next eligible program.</td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td align="center" class="p0" style="padding:0px 30px 20px 30px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td class="button-td button-td-primary" style="border-radius: 0px; background: #15284b;"><a class="mob-cta" href="https://emeritus.org/universities/uc-berkeley-executive-education?utm_source=product&utm_medium=emailer&utm_campaign=cobe_paid_apps&utm_content=ExplorePrograms" style="background: #15284b; border: 1px solid #15284b; font-family: sans-serif; font-size: 15px; line-height: 18px; text-decoration: none; padding: 18px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 0px;text-align: center;" target="_blank">EXPLORE PROGRAMS</a></td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #272525;line-height:26px;padding-bottom: 0px;">You’ll acquire future-focused business insights and invaluable leadership skills as you earn a distinguished credential.</td>
+                                                         </tr>
+                                                        
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                             
+                                          </tbody>
+                                       </table>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td align="left" bgcolor="#ffffff" style="padding:0px 20px 0px 20px;">
+                                       <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                          <tbody>
+                                             <tr>
+                                                <td align="left" bgcolor="#efefef" style="padding: 30px;">
+                                                   <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                      <tbody>
+                                                         <tr>
+                                                            <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #272525;line-height:26px;">When you earn your Certificate of Business Excellence, you will join a global network of more than 41,000 UC Berkeley alumni in more than 80 countries, and gain access to exclusive benefits available only to UC Berkeley alumni:</td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td align="left" class="" style="padding: 20px 0px 0px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font-subhead" style="font-size:22px; font-weight: bold; font-family:Arial,Helvetica, sans-serif; color:#15284b;padding:0px 0px 20px 0px; line-height:32px;"><b>Networking and events </b></td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="no-padding">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td align="center" width="30%" class="flex" valign="top">
+                                                                                       <table border="0" cellpadding="0" cellspacing="0">
+                                                                                          <tbody>
+                                                                                             <tr>
+                                                                                                <td align="center">
+                                                                                                   <img alt="Join local alumni chapters" border="0" src="https://emeritus.org/wp-content/uploads/2021/09/Icon1.png" style="max-width: 100%;display: inline-block; border: 0px;" title="Join local alumni chapters">
+                                                                                                </td>
+                                                                                             </tr>
+                                                                                             <tr>
+                                                                                                <td align="center" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #272525;line-height:22px;">Join local alumni chapters</td>
+                                                                                             </tr>
+                                                                                          </tbody>
+                                                                                       </table>
+                                                                                    </td>
+                                                                                    <td align="center" width="5%" class="flex"></td>
+                                                                                    <td align="center" width="30%" class="flex" valign="top">
+                                                                                       <table border="0" cellpadding="0" cellspacing="0">
+                                                                                          <tbody>
+                                                                                             <tr>
+                                                                                                <td align="center">
+                                                                                                   <img alt="Get invited to the alumni conference" border="0" src="https://emeritus.org/wp-content/uploads/2021/09/Icon2.png" style="max-width: 100%;display: inline-block; border: 0px;" title="Get invited to the alumni conference">
+                                                                                                </td>
+                                                                                             </tr>
+                                                                                             <tr>
+                                                                                                <td align="center" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #272525;line-height:22px;">Get invited to the alumni conference</td>
+                                                                                             </tr>
+                                                                                          </tbody>
+                                                                                       </table>
+                                                                                    </td>
+                                                                                    <td align="center" width="5%" class="flex"></td>
+                                                                                    <td align="center" width="30%" class="flex" valign="top">
+                                                                                       <table border="0" cellpadding="0" cellspacing="0">
+                                                                                          <tbody>
+                                                                                             <tr>
+                                                                                                <td align="center">
+                                                                                                   <img alt="Attend select networking events" border="0" src="https://emeritus.org/wp-content/uploads/2021/09/Icon3.png" style="max-width: 100%;display: inline-block; border: 0px;" title="Attend select networking events">
+                                                                                                </td>
+                                                                                             </tr>
+                                                                                             <tr>
+                                                                                                <td align="center" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #272525;line-height:22px;">Attend select networking events</td>
+                                                                                             </tr>
+                                                                                          </tbody>
+                                                                                       </table>
+                                                                                    </td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font-subhead" style="font-size:22px; font-weight: bold; font-family:Arial,Helvetica, sans-serif; color:#15284b;padding:30px 0px 20px 0px; line-height:32px;"><b>Berkeley resources</b></td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="no-padding">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td align="center" width="30%" class="flex" valign="top">
+                                                                                       <table border="0" cellpadding="0" cellspacing="0">
+                                                                                          <tbody>
+                                                                                             <tr>
+                                                                                                <td align="center">
+                                                                                                   <img alt="Earn a Berkeley Haas email forwarding address" border="0" src="https://emeritus.org/wp-content/uploads/2021/09/Icon4.png" style="max-width: 100%;display: inline-block; border: 0px;" title="Earn a Berkeley Haas email forwarding address">
+                                                                                                </td>
+                                                                                             </tr>
+                                                                                             <tr>
+                                                                                                <td align="center" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #272525;line-height:22px;">Earn a Berkeley Haas email forwarding address</td>
+                                                                                             </tr>
+                                                                                          </tbody>
+                                                                                       </table>
+                                                                                    </td>
+                                                                                    <td align="center" width="5%" class="flex"></td>
+                                                                                    <td align="center" width="30%" class="flex" valign="top">
+                                                                                       <table border="0" cellpadding="0" cellspacing="0">
+                                                                                          <tbody>
+                                                                                             <tr>
+                                                                                                <td align="center">
+                                                                                                   <img alt="Enjoy discounts on eligible programs" border="0" src="https://emeritus.org/wp-content/uploads/2021/09/Icon5.png" style="max-width: 100%;display: inline-block; border: 0px;" title="Enjoy discounts on eligible programs">
+                                                                                                </td>
+                                                                                             </tr>
+                                                                                             <tr>
+                                                                                                <td align="center" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #272525;line-height:22px;">Enjoy discounts on eligible programs </td>
+                                                                                             </tr>
+                                                                                          </tbody>
+                                                                                       </table>
+                                                                                    </td>
+                                                                                    <td align="center" width="5%" class="flex"></td>
+                                                                                    <td align="center" width="30%" class="flex" valign="top">
+                                                                                       <table border="0" cellpadding="0" cellspacing="0">
+                                                                                          <tbody>
+                                                                                             <tr>
+                                                                                                <td align="center">
+                                                                                                   <img alt="Public access to the Long Business Library when on campus" border="0" src="https://emeritus.org/wp-content/uploads/2021/09/Icon6.png" style="max-width: 100%;display: inline-block; border: 0px;" title="Public access to the Long Business Library when on campus">
+                                                                                                </td>
+                                                                                             </tr>
+                                                                                             <tr>
+                                                                                                <td align="center" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #272525;line-height:22px;">Public access to the Long Business Library when on campus</td>
+                                                                                             </tr>
+                                                                                          </tbody>
+                                                                                       </table>
+                                                                                    </td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="mobile-font-subhead" style="font-size:22px; font-weight: bold; font-family:Arial,Helvetica, sans-serif; color:#15284b;padding:30px 0px 20px 0px; line-height:32px;"><b>News and communication</b></td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td align="left" class="no-padding">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td align="center" width="30%" class="flex" valign="top">
+                                                                                       <table border="0" cellpadding="0" cellspacing="0">
+                                                                                          <tbody>
+                                                                                             <tr>
+                                                                                                <td align="center">
+                                                                                                   <img alt="One-year subscription to California Management Review" border="0" src="https://emeritus.org/wp-content/uploads/2021/09/Icon7.png" style="max-width: 100%;display: inline-block; border: 0px;" title="One-year subscription to California Management Review">
+                                                                                                </td>
+                                                                                             </tr>
+                                                                                             <tr>
+                                                                                                <td align="center" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #272525;line-height:22px;">One-year subscription to <em>California Management</em> Review</td>
+                                                                                             </tr>
+                                                                                          </tbody>
+                                                                                       </table>
+                                                                                    </td>
+                                                                                    <td align="center" width="5%" class="flex"></td>
+                                                                                    <td align="center" width="30%" class="flex" valign="top">
+                                                                                       <table border="0" cellpadding="0" cellspacing="0">
+                                                                                          <tbody>
+                                                                                             <tr>
+                                                                                                <td align="center">
+                                                                                                   <img alt="Berkeley Haas Alumni and Jobs e-Newsletters" border="0" src="https://emeritus.org/wp-content/uploads/2021/09/Icon8.png" style="max-width: 100%;display: inline-block; border: 0px;" title="Berkeley Haas Alumni and Jobs e-Newsletters">
+                                                                                                </td>
+                                                                                             </tr>
+                                                                                             <tr>
+                                                                                                <td align="center" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #272525;line-height:22px;">Berkeley Haas Alumni and Jobs e-Newsletters</td>
+                                                                                             </tr>
+                                                                                          </tbody>
+                                                                                       </table>
+                                                                                    </td>
+                                                                                    <td align="center" width="5%" class="flex"></td>
+                                                                                    <td align="center" width="30%" class="flex" valign="top">
+                                                                                       <table border="0" cellpadding="0" cellspacing="0">
+                                                                                          <tbody>
+                                                                                             <tr>
+                                                                                                <td align="center">
+                                                                                                   <img alt="Access to Haas Insights with the latest research" border="0" src="https://emeritus.org/wp-content/uploads/2021/09/Icon9.png" style="max-width: 100%;display: inline-block; border: 0px;" title="Access to Haas Insights with the latest research">
+                                                                                                </td>
+                                                                                             </tr>
+                                                                                             <tr>
+                                                                                                <td align="center" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #272525;line-height:22px;">Access to Haas Insights with the latest research</td>
+                                                                                             </tr>
+                                                                                          </tbody>
+                                                                                       </table>
+                                                                                    </td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td align="center" class="padd-top-20 plr" style="padding:30px 30px 0px 30px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td class="button-td button-td-primary" style="border-radius: 0px; background: #15284b;"><a class="button-a button-a-primary" href="https://executive.berkeley.edu/certificate-of-business-excellence?utm_source=product&utm_medium=emailer&utm_campaign=cobe_paid_apps&utm_content=ExploreAlumniBenefits#benefits" style="background: #15284b; border: 1px solid #15284b; font-family: sans-serif; font-size: 15px; line-height: 18px; text-decoration: none; padding: 18px 45px; color: #ffffff; font-weight: bold; display: block; border-radius: 0px;    text-align: center;" target="_blank">APPLY NOW</a></td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td align="left" bgcolor="#efefef" style="padding:0px 30px 20px;">
+                                                   <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                      <tbody>
+                                                         <tr>
+                                                            <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #272525;line-height:26px;padding-bottom: 20px;">To earn your COBE credential, you must enroll in at least one program from each of the four pillars below, completing a minimum of 17 curriculum days of qualified programs over three years:</td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td align="left" style="padding: 0px 0px 0px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" class="no-padding">
+                                                                           <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                              <tbody>
+                                                                                 <tr>
+                                                                                    <td align="center" width="49%" class="flex" valign="top">
+                                                                                       <table border="0" cellpadding="0" cellspacing="0">
+                                                                                          <tbody>
+                                                                                             <tr>
+                                                                                                <td style="padding: 0px 0px 10px 0px;">
+                                                                                                   <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                                                      <tbody>
+                                                                                                         <tr>
+                                                                                                            <td align="left" class="mobile-font2" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#15284b;line-height: 24px;" valign="top" width="20"><img src="https://emeritus.org/wp-content/uploads/2021/05/Arrow.png"></td>
+                                                                                                            <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#333333;line-height: 26px;padding-left:6px;padding-bottom:10px;" valign="top">Entrepreneurship & Innovation</td>
+                                                                                                         </tr>
+                                                                                                         <tr>
+                                                                                                            <td align="left" class="mobile-font2" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#15284b;line-height: 24px;" valign="top" width="20"><img src="https://emeritus.org/wp-content/uploads/2021/05/Arrow.png"></td>
+                                                                                                            <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#333333;line-height: 26px;padding-left:6px;padding-bottom:10px;" valign="top">Strategy & Management</td>
+                                                                                                         </tr>
+                                                                                                      </tbody>
+                                                                                                   </table>
+                                                                                                </td>
+                                                                                             </tr>
+                                                                                          </tbody>
+                                                                                       </table>
+                                                                                    </td>
+                                                                                    <td align="center" width="2%" class="flex"></td>
+                                                                                    <td align="center" width="49%" class="flex" valign="top">
+                                                                                       <table border="0" cellpadding="0" cellspacing="0">
+                                                                                          <tbody>
+                                                                                             <tr>
+                                                                                                <td style="padding: 0px 0px 10px 0px;">
+                                                                                                   <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                                                      <tbody>
+                                                                                                         <tr>
+                                                                                                            <td align="left" class="mobile-font2" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#15284b;line-height: 24px;" valign="top" width="20"><img src="https://emeritus.org/wp-content/uploads/2021/05/Arrow.png"></td>
+                                                                                                            <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#333333;line-height: 26px;padding-left:6px;padding-bottom:10px;" valign="top">Leadership & Communication</td>
+                                                                                                         </tr>
+                                                                                                         <tr>
+                                                                                                            <td align="left" class="mobile-font2" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#15284b;line-height: 24px;" valign="top" width="20"><img src="https://emeritus.org/wp-content/uploads/2021/05/Arrow.png"></td>
+                                                                                                            <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color:#333333;line-height: 26px;padding-left:6px;padding-bottom:10px;" valign="top">Finance & Business Acumen</td>
+                                                                                                         </tr>
+                                                                                                      </tbody>
+                                                                                                   </table>
+                                                                                                </td>
+                                                                                             </tr>
+                                                                                          </tbody>
+                                                                                       </table>
+                                                                                    </td>
+                                                                                 </tr>
+                                                                              </tbody>
+                                                                           </table>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                         
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td align="left" bgcolor="#ffffff" style="padding: 30px;">
+                                                   <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                      <tbody>
+                                                         
+                                                         <tr>
+                                                            <td align="left" class="mobile-font-subhead" style="font-size:22px; font-weight: bold; font-family:Arial,Helvetica, sans-serif; color:#15284b;padding:0px 0px 15px 0px; line-height:32px;"><b>Meet alumni of the COBE credential</b></td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #272525;line-height:26px;">Our alumni enjoy the same networking, events, resources, and benefits available to you as a UC Berkeley alumnus.</td>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td align="left" style="padding: 0px 20px;">
+                                       <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                          <tbody>
+                                             <tr>
+                                                <td align="center" bgcolor="#ffffff" valign="top">
+                                                  <table border="0" cellpadding="0" cellspacing="0">
+                                                      <tbody>
+                                                            <tr>
+                                                               <td style="padding: 0px 30px;">
+                                                                  <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                                     <tbody>
+                                                                         <tr>
+                                                                              <td align="center">
+                                                                                 <img alt="Mohamed Benmansour" src="https://emeritus.org/wp-content/uploads/2021/10/mohemad-cobe.png" title="Mohamed Benmansour" style="max-width: 100%;border:0px;">
+                                                                              </td>
+                                                                         </tr>
+                                                                        <tr>
+                                                                            <td align="center" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #ffffff;line-height:26px;"><a href="https://emrt.us/cobe-emailer?utm_source=product&utm_medium=emailer&utm_campaign=cobe_paid_apps&utm_content=MohamedBenmansour" target="_blank" style="color: #FDB515;"><u>Learn more</u></a></td>
+                                                                        </tr>
+                                                                         <tr>
+                                                                           <td align="center" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #272525;line-height:20px;">about Mohamed Benmansour's journey.</td>
+                                                                        </tr>
+                                                                     </tbody>
+                                                                  </table>
+                                                               </td>
+                                                            </tr>
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td align="left" bgcolor="#ffffff" style="padding:20px 20px;">
+                                       <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                          <tbody>
+                                             <tr>
+                                                <td align="left" bgcolor="#15284b" style="padding: 20px 20px;">
+                                                   <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                      <tbody>
+                                                         <tr>
+                                                            <td align="center" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #ffffff;line-height:26px;padding-bottom: 10px;">“COBE was a great way to tap into the Berkeley ecosystem to continue to build my business network and connect with other professionals like me.”</td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td align="center" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #FDB515;line-height:26px;padding-bottom: 20px;"><b>– John Hui, healthcare entrepreneur</b></td>
+                                                         </tr>
+                                                         
+                                                         <tr>
+                                                            <td align="center" class="p0" style="padding:0px 30px 20px 30px;">
+                                                               <table border="0" cellpadding="0" cellspacing="0">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td class="button-td button-td-primary" style="border-radius: 0px; background: #FDB515;"><a class="mob-cta" href="https://emeritus.org/universities/uc-berkeley-executive-education?utm_source=product&utm_medium=emailer&utm_campaign=cobe_paid_apps&utm_content=ExplorePrograms" style="background: #FDB515; border: 1px solid #FDB515; font-family: sans-serif; font-size: 15px; line-height: 18px; text-decoration: none; padding: 18px 30px; color: #ffffff; font-weight: bold; display: block; border-radius: 0px;text-align: center;" target="_blank">EXPLORE PROGRAMS</a></td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td align="center" class="mobile-font" style="font-size:14px; font-family:Arial,Helvetica, sans-serif; color: #ffffff;line-height:26px;padding-bottom: 20px;"><em>Please note that the COBE credential can be earned through eligible programs. Details are available on the web page of each program.</em></td>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td align="left" bgcolor="#ffffff" style="padding:0px 20px;">
+                                       <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                          <tbody>
+                                             <tr>
+                                                <td align="left" style="padding: 20px;">
+                                                   <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                      <tbody>
+                                                         <tr>
+                                                            <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #272525;line-height:26px;">Should you have any questions, please contact a program<br> advisor at <a href="tel:+1-510-822-8883" style="color: #15284b;"><u>+1 510-822-8883</u></a>. </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td align="left" class="mobile-font" style="font-size:16px; font-family:Arial,Helvetica, sans-serif; color: #272525;line-height:26px;padding-top: 20px;">You also may reply to this email. </td>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td align="left" bgcolor="#ffffff" style="padding:0px 20px;">
+                                       <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                          <tbody>
+                                             <tr>
+                                                <td align="center" bgcolor="#efefef" style="padding:30px;">
+                                                   <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                      <tbody>
+                                                         <tr>
+                                                            <td class="section-notop-padding-no mobile-font-subtitle-font sign" style="padding:0px 0px 0px 0px;font-size:16px; color:#272525; text-align:left;font-family:Arial,Helvetica, sans-serif; line-height:25px;font-weight:400;">Regards,<br>
+                                                               %%user_html_signature%%
+                                                            </td>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td align="left" bgcolor="#ffffff" style="padding:0px 20px;">
+                                       <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                          <tbody>
+                                             <tr>
+                                                <td align="left" bgcolor="#efefef" style="padding: 0px 30px 30px 30px;">
+                                                   <table border="0" cellpadding="0" cellspacing="0" class="responsive-table" width="100%">
+                                                      <tbody>
+                                                         <tr>
+                                                            <td align="left">
+                                                               <!-- COPY -->
+                                                               <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td align="left" style="border-top:2px solid #000000;font-size: 11px; line-height:20px; font-family:Arial,  Helvetica, sans-serif; color:#272525;padding-top: 30px;" class=""><em>Note: UC Berkeley Executive Education is collaborating with online education provider Emeritus to offer a portfolio of high-impact online programs. These programs leverage UC Berkeley Executive Education's thought leadership in management practice developed over years of research, teaching, and application. By working with Emeritus, UC Berkeley Executive Education is able to broaden access beyond on-campus offerings in a collaborative and engaging format that stays true to the quality of The University of California, Berkeley. </em></td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td align="center" bgcolor="#ffffff">
+                                       <!--[if (gte mso 9)|(IE)]>
+                                       <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
+                                          <tr>
+                                             <td align="center" valign="top" bgcolor="#efefef" width="500">
+                                                <![endif]--><!-- UNSUBSCRIBE COPY -->
+                                                <table align="center" border="0" cellpadding="0" cellspacing="0" class="responsive-table" style="max-width: 500px;" width="100%">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td align="center"  style="padding-bottom:20px;padding-top: 20px; font-size: 12px; line-height:22px; font-family:Arial,  Helvetica, sans-serif; color:#15284b;" class=""><a href="%%unsubscribe%%" style="color: #15284b; text-decoration: underline;" target="_blank">unsubscribe</a> from this list</td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                                <!--[if (gte mso 9)|(IE)]>
+                                             </td>
+                                          </tr>
+                                       </table>
+                                       <![endif]-->
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+               <!--[if (gte mso 9)|(IE)]>
+            </td>
+         </tr>
+      </table>
+      <![endif]-->
+   </body>
+</html>
